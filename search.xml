@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo-markdown问题解决</title>
+      <link href="/post/31cc165d.html"/>
+      <url>/post/31cc165d.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="创建markdown"><a href="#创建markdown" class="headerlink" title="创建markdown"></a>创建markdown</h1><ol><li>首先在Hexo的根目录下打开git 输入 hxeo n 文件名</li><li>其次&#x2F;Blogroot&#x2F;source&#x2F;_post 即可看到对应的md文件和文件夹</li></ol><p><img src="/post/31cc165d/image-20230507101807999.png" alt="image-20230507101807999"></p><p><img src="/post/31cc165d/image-20230507101924378.png" alt="image-20230507101924378"></p><h1 id="markdown的使用"><a href="#markdown的使用" class="headerlink" title="markdown的使用"></a>markdown的使用</h1><ol><li>首先在文件头部添加文件的基本信息，这些基本信息可以被hexo框架读取+渲染</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">--- （主要这里的---不能少，不然hexo识别不到）</span><br><span class="line">title: hexo-markdown问题解决</span><br><span class="line"><span class="built_in">date</span>: 2023-05-07 10:14:45</span><br><span class="line">author: luozongwei</span><br><span class="line">categories:</span><br><span class="line">  - hexo</span><br><span class="line">tags:</span><br><span class="line">  - hexo</span><br><span class="line">  - markdown</span><br><span class="line">---</span><br></pre></td></tr></table></figure><ol start="2"><li>最重要的是markdown中的图片显示问题，这里我提供两个解决方法</li></ol><p>第一个是直接使用markdown语法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![图片显示名称](图片路径) 如下面图片所示</span><br><span class="line">![demo01](/hexo-markdown%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/demo01.png) </span><br><span class="line">这里的%是因为我的文件名用了中文</span><br><span class="line">注意这里非常重要的一代你是必须在前面加上hexo-markdown加上  / or ./ 否则上传的时候显示不了</span><br></pre></td></tr></table></figure><p><img src="/post/31cc165d/image-20230508094219242.png" alt="image-20230508094219242"></p><p><img src="/post/31cc165d/image-20230508094322483.png" alt="image-20230508094322483"></p><h1 id="对于hexo背景图片的修改"><a href="#对于hexo背景图片的修改" class="headerlink" title="对于hexo背景图片的修改"></a>对于hexo背景图片的修改</h1><p>在_config.butterfly.yml 下修改：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Avatar (头像)</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># img: https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">/img/favicon.png</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The banner image of home page 背景图片</span></span><br><span class="line"><span class="attr">index_img:</span> <span class="string">/img/background.png</span></span><br></pre></td></tr></table></figure><h1 id="对于可能遇到hexo插件问题"><a href="#对于可能遇到hexo插件问题" class="headerlink" title="对于可能遇到hexo插件问题"></a>对于可能遇到hexo插件问题</h1><p>因为要使用到一下hexo的插件，因此在下面举了一些例子：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo-cli 是 hexo的指令集 下载后可以使用 hexo s;hexo g等等</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment"># butterfly主题进行渲染</span></span><br><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br><span class="line"><span class="comment"># 保证markdown中的图片路径即正常显示</span></span><br><span class="line"> npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo+github搭建个人博客</title>
+      <link href="/post/68689ca1.html"/>
+      <url>/post/68689ca1.html</url>
+      
+        <content type="html"><![CDATA[<p>首先声明是在<a href="https://haiyong.site/post/cda958f2.html">Hexo+阿里云&amp;GitHub 搭建个人博客 | 海拥 (haiyong.site)</a>基础上添加了自己在学习中遇到的错误，事先声明。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>安装必要的软件 (本人是在Windows11系统下实现)</p><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><p><a href="https://blog.csdn.net/weixin_52799373/article/details/123840137">nodejs安装教程</a> </p><h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html">git安装教程</a></p><h2 id="hexo框架安装"><a href="#hexo框架安装" class="headerlink" title="hexo框架安装"></a>hexo框架安装</h2><p>官方地址：<a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p><ol><li>首先需要建立博客文件夹，建议建在非系统盘，例如，那么这个目录F:\lwsj\myblog, 就是我们博客的根目录了。<br>因为每个人的命名习惯不同，本帖之后会以 [Blogroot] 指代博客根目录。</li><li>使用 npm 安装 Hexo, 在 [Blogroot] （就是你想要放hexo框架的根目录）路径下右键 -&gt;Git Bash Here, 输入</li></ol><p><strong>这里注意一点npm …一般要管理员权限才能执行</strong> （Windows11）</p><p><img src="/post/68689ca1/image-20230507093706677.png" alt="image-20230507093706677"></p><p><img src="/post/68689ca1/image-20230507093821967.png" alt="image-20230507093821967"></p><p>这样就以管理员的权限进入到[Blogroot]目录了。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br><span class="line"><span class="comment">#将npm源替换为阿里的镜像。之后的安装就会迅速很多了。</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment"># hexo-cli 是 hexo的指令集。</span></span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure><ol start="3"><li>初始化 Hexo 博客：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 本地创建一个目录用于存放博客</span></span><br><span class="line">hexo init</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></li></ol><p>然后在浏览器中打开 localhost:4000 , 就能看到 (最初的hexo框架的样子)</p><p><img src="/post/68689ca1/image-20230507094233583.png" alt="image-20230507094233583"></p><p>＞通过以上 3 种方式部署 Hexo 博客之后，就拥有了一个最简单的个人博客网站了，下面讲讲博客的简单初始化。</p><h1 id="Hexo-基础修改"><a href="#Hexo-基础修改" class="headerlink" title="Hexo 基础修改"></a>Hexo 基础修改</h1><h2 id="修改网站关键信息"><a href="#修改网站关键信息" class="headerlink" title="修改网站关键信息"></a>修改网站关键信息</h2><p>Hexo 初始化后，博客网站有一些关键信息是默认的，需要修改为我们自己的信息。 （要熟练使用ctrl+F进行搜索）</p><h3 id="网站资料"><a href="#网站资料" class="headerlink" title="网站资料"></a>网站资料</h3><p>修改网站各种资料，例如标题、副标题和邮箱等个人资料，请修改博客根目录的站点配置文件 _config.yml：</p><p><img src="/post/68689ca1/image-20230507094503955.png" alt="image-20230507094503955"></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: 罗师傅</span><br><span class="line">subtitle: <span class="string">&#x27;一个热爱学习和运动的程序猿&#x27;</span></span><br><span class="line">description: <span class="string">&#x27;&#x27;</span></span><br><span class="line">keywords:</span><br><span class="line">author: lwsj</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><h2 id="Butterfly主题安装"><a href="#Butterfly主题安装" class="headerlink" title="Butterfly主题安装"></a>Butterfly主题安装</h2><p>在你的 Hexo 根目录里执行：（为了让你的页面变得更好看）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>安装完后将会在\Blogroot\themes 下看到butterfly，双击进去</p><p><img src="/post/68689ca1/image-20230507095154252.png" alt="image-20230507095154252"></p><p>修改主题配置文件 <code>_config.butterfly.yml</code>：（这里要做一个说明）</p><p>在 hexo 的根目录创建一个文件 <code>_config.butterfly.yml</code>，并把<strong>主题目录</strong>(就是butterfly下)的 <code>_config.yml</code> 内容复制到 <code>_config.butterfly.yml</code> 去，以后只需要在 <code>_config.butterfly.yml</code> 进行配置就行。</p><p><img src="/post/68689ca1/image-20230507095256770.png" alt="image-20230507095256770"></p><h3 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h3><p>修改 Hexo 根目录下的 <code>_config.yml</code>，把主题改为 butterfly</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure><h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>如果你没有 pug 以及 stylus 的渲染器，请下载安装：（为了将butterfly主题渲染出来）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><h3 id="导航菜单"><a href="#导航菜单" class="headerlink" title="导航菜单"></a>导航菜单</h3><p>看上面我指定链接的博客即可<a href="https://haiyong.site/post/cda958f2.html">Hexo+阿里云&amp;GitHub 搭建个人博客 | 海拥 (haiyong.site)</a></p><p>修改后如下: (本人已经做了删减了)</p><p><img src="/post/68689ca1/image-20230507100426785.png" alt="image-20230507100426785"></p><h1 id="github部署"><a href="#github部署" class="headerlink" title="github部署"></a>github部署</h1><p>看海拥博主的博客<a href="https://haiyong.site/post/cda958f2.html">Hexo+阿里云&amp;GitHub 搭建个人博客 | 海拥 (haiyong.site)</a></p><p>这里对于最后的上传做个说明：<strong>一定要进行hexo clean，不然github刷新有点问题。</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line">等价于 hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
