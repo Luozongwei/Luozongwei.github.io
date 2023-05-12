@@ -22,6 +22,8 @@
             
             <tag> markdown </tag>
             
+            <tag> note </tag>
+            
         </tags>
       
     </entry>
@@ -48,6 +50,8 @@
             <tag> gulimall </tag>
             
             <tag> springboot </tag>
+            
+            <tag> problem </tag>
             
         </tags>
       
@@ -76,6 +80,8 @@
             
             <tag> hexo </tag>
             
+            <tag> problem </tag>
+            
         </tags>
       
     </entry>
@@ -98,6 +104,8 @@
       
       
         <tags>
+            
+            <tag> note </tag>
             
             <tag> hexo </tag>
             
