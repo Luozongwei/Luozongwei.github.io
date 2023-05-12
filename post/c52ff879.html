@@ -174,10 +174,10 @@
 <p>启动springboot项目，Unable to start web server； nested exception is org.springframework.beans.factory</p>
 </blockquote>
 <h2 id="一、👻👻👻问题描述"><a href="#一、👻👻👻问题描述" class="headerlink" title="一、👻👻👻问题描述"></a>一、👻👻👻问题描述</h2><p>(1) 启动SpringBoot项目时出现异常：</p>
-<p><img src="/post/c52ff879/image-20230511200131462.png" alt="image-20230511200131462"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511200131462.png" alt="image-20230511200131462"></p>
 <p>(2)由于在使用springBoot创建项目的时候创建了cloud依赖，后面又改了springBoot的版本。</p>
-<p><img src="/post/c52ff879/image-20230511200327492.png" alt="image-20230511200327492"></p>
-<p><img src="/post/c52ff879/image-20230511200422022.png" alt="image-20230511200422022"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511200327492.png" alt="image-20230511200327492"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511200422022.png" alt="image-20230511200422022"></p>
 <h2 id="二、🌟🌟🌟异常原因"><a href="#二、🌟🌟🌟异常原因" class="headerlink" title="二、🌟🌟🌟异常原因"></a>二、🌟🌟🌟异常原因</h2><blockquote>
 <ul>
 <li>根本原因：springboot父工程的依赖版本，与springcloud某个组件依赖版本不匹配。</li>
@@ -185,19 +185,19 @@
 </ul>
 </blockquote>
 <h2 id="三、✌✌✌解决方法"><a href="#三、✌✌✌解决方法" class="headerlink" title="三、✌✌✌解决方法"></a>三、✌✌✌解决方法</h2><p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-cloud">Spring Cloud</a></p>
-<p><img src="/post/c52ff879/image-20230511200901766.png" alt="image-20230511200901766"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511200901766.png" alt="image-20230511200901766"></p>
 <blockquote>
-<p>springboot:2.1.8.RELEASE 官方建议<font color="red"> Greenwich.SR6</font><br> 当然选择低一点版本也可以哈我用的<font color="red"> Greenwich.SR3</font></p>
+<p>springboot:2.1.8.RELEASE 官方建议<font color='red'> Greenwich.SR6</font><br> 当然选择低一点版本也可以哈我用的<font color='red'> Greenwich.SR3</font></p>
 </blockquote>
-<p><img src="/post/c52ff879/image-20230511201039947.png" alt="image-20230511201039947"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511201039947.png" alt="image-20230511201039947"></p>
 <p><a target="_blank" rel="noopener" href="https://mvnrepository.com/">Maven仓库地址</a></p>
-<p><img src="/post/c52ff879/image-20230511201604915.png" alt="image-20230511201604915"></p>
-<p><img src="/post/c52ff879/image-20230511201639512.png" alt="image-20230511201639512"></p>
-<p><img src="/post/c52ff879/image-20230511211611993.png" alt="image-20230511211611993"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511201604915.png" alt="image-20230511201604915"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511201639512.png" alt="image-20230511201639512"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511211611993.png" alt="image-20230511211611993"></p>
 <h2 id="四、🌞🌞🌞测试结果"><a href="#四、🌞🌞🌞测试结果" class="headerlink" title="四、🌞🌞🌞测试结果"></a>四、🌞🌞🌞测试结果</h2><blockquote>
 <p>springBoot正常启动</p>
 </blockquote>
-<p><img src="/post/c52ff879/image-20230511211808733.png" alt="image-20230511211808733"></p>
+<p><img src="/gulimall-springboot%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/image-20230511211808733.png" alt="image-20230511211808733"></p>
 <h2 id="五、🍀🍀🍀注意"><a href="#五、🍀🍀🍀注意" class="headerlink" title="五、🍀🍀🍀注意"></a>五、🍀🍀🍀注意</h2><blockquote>
 <ul>
 <li>当boot项目中导入cloud组件时，尤其需要注意两者之间的版本是否匹配！！！</li>
