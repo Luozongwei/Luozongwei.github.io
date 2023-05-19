@@ -40,6 +40,8 @@
       
       <categories>
           
+          <category> java </category>
+          
           <category> gulimall </category>
           
       </categories>
@@ -78,9 +80,9 @@
             
             <tag> markdown </tag>
             
-            <tag> problem </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> problem </tag>
             
         </tags>
       
