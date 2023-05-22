@@ -20,7 +20,7 @@
       
         <tags>
             
-            <tag> problem </tag>
+            <tag> note </tag>
             
             <tag> mysql </tag>
             
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> markdown </tag>
-            
             <tag> note </tag>
+            
+            <tag> markdown </tag>
             
         </tags>
       
@@ -76,11 +76,11 @@
       
         <tags>
             
-            <tag> problem </tag>
-            
             <tag> gulimall </tag>
             
             <tag> springboot </tag>
+            
+            <tag> problem </tag>
             
         </tags>
       
@@ -105,9 +105,9 @@
       
         <tags>
             
-            <tag> problem </tag>
-            
             <tag> markdown </tag>
+            
+            <tag> problem </tag>
             
             <tag> hexo </tag>
             
