@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> markdown </tag>
+            
+            <tag> note </tag>
             
         </tags>
       
@@ -105,9 +105,9 @@
       
         <tags>
             
-            <tag> problem </tag>
-            
             <tag> markdown </tag>
+            
+            <tag> problem </tag>
             
             <tag> hexo </tag>
             
