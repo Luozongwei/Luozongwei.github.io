@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>如何实现0元百度网盘不限速？</title>
+      <link href="/post/7f7f39a9.html"/>
+      <url>/post/7f7f39a9.html</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><font face="zhuZiAWan" size=3><blockquote><p>✨你好啊，我是“ 罗师傅”，是一名程序猿哦。<br>🌍主页链接：<a href="https://luozongwei.github.io/">楚门的世界 - 一个热爱学习和运动的程序猿</a><br>☀️博文主更方向为：暂时木有哈哈。随着专业的深入会越来越广哦…一起期待。<br>❤️一个“不想让我曾没有做好的也成为你的遗憾”的博主。<br>💪很高兴与你相遇，一起加油！</p></blockquote><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>天下早已传闻百度网盘限速之苦，令人不堪其扰。然今有智者言：解困之道已现，待观风云。我们静候佳音。</p></blockquote><h2 id="草船借箭"><a href="#草船借箭" class="headerlink" title="草船借箭"></a>草船借箭</h2><blockquote><p>首先我们得先有油猴插件：<a href="https://www.lzwgxust.top/post/9506ea9e.html">超级好用的工具集合 | 楚门的世界 (lzwgxust.top)</a></p><p>然后下载脚本：<a href="https://greasyfork.org/zh-CN/scripts/463707-%E5%B0%B1%E6%98%AF%E5%8A%A0%E9%80%9F-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E6%97%A0%E9%99%90%E9%80%9F%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD">【就是加速】百度网盘无限速批量下载 (greasyfork.org)</a></p><p>IDM下载：<a href="https://www.123pan.com/s/NjcA-PGmNA.html">https://www.123pan.com/s/NjcA-PGmNA.html</a></p><p>IDM破解：<a href="https://zhuanlan.zhihu.com/p/430535305">IDM序列号 - 知乎 (zhihu.com)</a></p></blockquote><h2 id="万事俱备"><a href="#万事俱备" class="headerlink" title="万事俱备"></a>万事俱备</h2><blockquote><p>上面的准备工作成功后：你会看到一个就是加速（豪气）</p></blockquote><img src="/post/7f7f39a9/image-20230611214623750.png" class="" title="image-20230611214623750"><blockquote><p>可以批量下载，但是不能下载文件夹，就是要进入到文件夹里边</p></blockquote><img src="/post/7f7f39a9/image-20230611214747850.png" class="" title="image-20230611214747850"><blockquote><p>首先会出现一个拦截，点击链接即可。</p></blockquote><img src="/post/7f7f39a9/image-20230611214917146.png" class="" title="image-20230611214917146"><blockquote><p>再次点击就是加速：复制netdisk</p></blockquote><img src="/post/7f7f39a9/image-20230611215049392.png" class="" title="image-20230611215049392"><blockquote><p>打开IDM</p></blockquote><img src="/post/7f7f39a9/image-20230611215140200.png" class="" title="image-20230611215140200"><img src="/post/7f7f39a9/image-20230611215212909.png" class="" title="image-20230611215212909"><img src="/post/7f7f39a9/image-20230611215347960.png" class="" title="image-20230611215347960"><img src="/post/7f7f39a9/image-20230611215421102.png" class="" title="image-20230611215421102"><img src="/post/7f7f39a9/image-20230611215613077.png" class="" title="image-20230611215613077"><blockquote><p>下载速度还是挺可观的</p></blockquote><img src="/post/7f7f39a9/image-20230611215709314.png" class="" title="image-20230611215709314"><blockquote><p>到此就实现加速啦~ 真正的勇士就是要寻找破局之道！</p></blockquote><h1 id="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"><a href="#❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！" class="headerlink" title="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"></a>❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</h1><blockquote><p>🍉🍉🍉此博文会持续更新，记得常回来看看哦，一起加油做出更好看更有用的博文呀💪。</p></blockquote><div class="bilibili">   <iframe src="//player.bilibili.com/player.html?aid=244692322&bvid=BV1ov411C7YV&cid=238308474&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div></font>]]></content>
+      
+      
+      <categories>
+          
+          <category> tool </category>
+          
+          <category> baiduwangpan </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> baiduwangpan </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows-jdk版本切换</title>
+      <link href="/post/97f5ff5d.html"/>
+      <url>/post/97f5ff5d.html</url>
+      
+        <content type="html"><![CDATA[<p>[toc]</p><font face="zhuZiAWan" size=3>> ✨你好啊，我是“ 罗师傅”，是一名程序猿哦。> 🌍主页链接：[楚门的世界 - 一个热爱学习和运动的程序猿](https://luozongwei.github.io/)> ☀️博文主更方向为：一起来学go(狗)语言。随着专业的深入会越来越广哦…一起期待。> ❤️一个“不想让我曾没有做好的也成为你的遗憾”的博主。> 💪很高兴与你相遇，一起加油！<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>为了解决不同的插件、软件对jdk版本的需要。</p></blockquote><h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><blockquote><p>官网：<a href="https://www.oracle.com/java/technologies/downloads/">Java Downloads | Oracle</a></p></blockquote><img src="/post/97f5ff5d/image-20230611160006973.png" class="" title="image-20230611160006973"><blockquote><p>拉到下面有不同jdk版本的选择，现在用的最多的应该是 jdk8 、jdk11、jdk17。</p><p>下面以jdk17为例子：</p></blockquote><img src="/post/97f5ff5d/image-20230611160045806.png" class="" title="image-20230611160045806"><img src="/post/97f5ff5d/image-20230611160328287.png" class="" title="image-20230611160328287"><blockquote><p>根据自己需求选择对应电脑的安装包：我的是Windows11</p></blockquote><img src="/post/97f5ff5d/image-20230611160432387.png" class="" title="image-20230611160432387"><img src="/post/97f5ff5d/image-20230611160615192.png" class="" title="image-20230611160615192"><img src="/post/97f5ff5d/image-20230611160950478.png" class="" title="image-20230611160950478"><img src="/post/97f5ff5d/image-20230611161158136.png" class="" title="image-20230611161158136"><blockquote><p>这样子基本上就可以了，后面想切换windows的jdk版本的话就自己改变JAVA_HOME的值就OK了。</p></blockquote><img src="/post/97f5ff5d/image-20230611161328968.png" class="" title="image-20230611161328968"><img src="/post/97f5ff5d/image-20230611161407895.png" class="" title="image-20230611161407895"><h1 id="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"><a href="#❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！" class="headerlink" title="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"></a>❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</h1><blockquote><p>🍉🍉🍉此博文会持续更新，记得常回来看看哦，一起加油做出更好看更有用的博文呀💪。</p></blockquote><div class="bilibili">   <iframe src="//player.bilibili.com/player.html?aid=244692322&bvid=BV1ov411C7YV&cid=238308474&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div></font>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+          <category> jdk </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> jdk </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go-basic-learning-week02</title>
       <link href="/post/b577bd40.html"/>
       <url>/post/b577bd40.html</url>
@@ -15,12 +71,12 @@
           
           <category> go </category>
           
+          <category> basic </category>
+          
       </categories>
       
       
         <tags>
-            
-            <tag> go </tag>
             
             <tag> basic </tag>
             
@@ -42,12 +98,12 @@
           
           <category> go </category>
           
+          <category> basic </category>
+          
       </categories>
       
       
         <tags>
-            
-            <tag> go </tag>
             
             <tag> basic </tag>
             
@@ -69,12 +125,12 @@
           
           <category> go </category>
           
+          <category> goland </category>
+          
       </categories>
       
       
         <tags>
-            
-            <tag> go </tag>
             
             <tag> goland </tag>
             
@@ -128,9 +184,7 @@
       
         <tags>
             
-            <tag> note </tag>
-            
-            <tag> mysql </tag>
+            <tag> install </tag>
             
         </tags>
       
@@ -154,8 +208,6 @@
       
       
         <tags>
-            
-            <tag> note </tag>
             
             <tag> markdown </tag>
             
@@ -188,8 +240,6 @@
             
             <tag> springboot </tag>
             
-            <tag> problem </tag>
-            
         </tags>
       
     </entry>
@@ -214,8 +264,6 @@
         <tags>
             
             <tag> markdown </tag>
-            
-            <tag> problem </tag>
             
             <tag> hexo </tag>
             
@@ -242,11 +290,7 @@
       
         <tags>
             
-            <tag> note </tag>
-            
             <tag> hexo </tag>
-            
-            <tag> github </tag>
             
         </tags>
       
