@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>08-2-泛型-注解 | 楚门的世界</title><meta name="author" content="lwsj"><meta name="copyright" content="lwsj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="✨你好啊，我是“ 罗师傅”，是一名程序猿哦。🌍主页链接：楚门的世界 - 一个热爱学习和运动的程序猿☀️博文主更方向为：分享自己的快乐 briup-jp3-ing❤️一个“不想让我曾没有做好的也成为你的遗憾”的博主。💪很高兴与你相遇，一起加油！  前言 目标：Java基础编程，熟练Java开发语法和规则，养成良好编程习惯  泛型泛型概述 泛型（Generics）的概念是在JDK1.5中引入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="08-2-泛型-注解">
+<meta property="og:url" content="http://example.com/post/59864f97.html">
+<meta property="og:site_name" content="楚门的世界">
+<meta property="og:description" content="✨你好啊，我是“ 罗师傅”，是一名程序猿哦。🌍主页链接：楚门的世界 - 一个热爱学习和运动的程序猿☀️博文主更方向为：分享自己的快乐 briup-jp3-ing❤️一个“不想让我曾没有做好的也成为你的遗憾”的博主。💪很高兴与你相遇，一起加油！  前言 目标：Java基础编程，熟练Java开发语法和规则，养成良好编程习惯  泛型泛型概述 泛型（Generics）的概念是在JDK1.5中引入">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.lzwgxust.top/image/202308131508615.jpg">
+<meta property="article:published_time" content="2023-08-13T06:58:25.000Z">
+<meta property="article:modified_time" content="2023-09-19T12:21:20.191Z">
+<meta property="article:author" content="lwsj">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.lzwgxust.top/image/202308131508615.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/post/59864f97.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":500,"languages":{"author":"作者: lwsj","link":"链接: ","source":"来源: 楚门的世界","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '08-2-泛型-注解',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-19 20:21:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/bilibili.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">36</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images.lzwgxust.top/image/202308131508615.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="楚门的世界"><span class="site-name">楚门的世界</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">08-2-泛型-注解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-13T06:58:25.000Z" title="发表于 2023-08-13 14:58:25">2023-08-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-19T12:21:20.191Z" title="更新于 2023-09-19 20:21:20">2023-09-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jp3/">jp3</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jp3/java-basic/">java-basic</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="08-2-泛型-注解"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><font face="zhuZiAWan" size=3>
+
+<blockquote>
+<p>✨你好啊，我是“ 罗师傅”，是一名程序猿哦。<br>🌍主页链接：<a target="_blank" rel="noopener" href="https://luozongwei.github.io/">楚门的世界 - 一个热爱学习和运动的程序猿</a><br>☀️博文主更方向为：分享自己的快乐 briup-jp3-ing<br>❤️一个“不想让我曾没有做好的也成为你的遗憾”的博主。<br>💪很高兴与你相遇，一起加油！</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>目标：Java基础编程，熟练Java开发语法和规则，养成良好编程习惯</p>
+</blockquote>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><h2 id="泛型概述"><a href="#泛型概述" class="headerlink" title="泛型概述"></a>泛型概述</h2><blockquote>
+<p><strong>泛型（Generics）</strong>的概念是在<strong>JDK1.5</strong>中引入的，它的主要目的是为了解决类型<strong>安全性和代码复用</strong>的问题</p>
+<p>泛型是一种强大的特性，它允许我们在定义类、接口和方法时使用<strong>参数化类型</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//T是数据类型，但是不是确定的数据类型</span></span><br><span class="line"><span class="comment">//程序员在使用该类的时候，传入什么具体的类型给T，T就代表什么类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyClass</span>&lt;T&gt; &#123; <span class="comment">// 泛型类，使用类型参数T</span></span><br><span class="line">    <span class="keyword">private</span> T value;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setValue</span><span class="params">(T value)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">getValue</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color='#d12920'>泛型能够使我们编写出来通用的代码，提高代码的可读性和重用性。通过使用泛型，我们可以再类、接口和方法中使用类型参数，使得代码可以处理不同类型的数据，同时保持类型安全。</font></p>
+</blockquote>
+<h2 id="泛型应用"><a href="#泛型应用" class="headerlink" title="泛型应用"></a>泛型应用</h2><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line">    c.add(<span class="string">&quot;hello1&quot;</span>);</span><br><span class="line">    c.add(<span class="string">&quot;hello2&quot;</span>);</span><br><span class="line">    c.add(<span class="string">&quot;hello3&quot;</span>);</span><br><span class="line">    <span class="comment">//编译报错，add(E e) 已经变为 add(String e)</span></span><br><span class="line">    <span class="comment">//int类型的数据1，是添加不到集合中去的</span></span><br><span class="line">    <span class="comment">//c.add(1);</span></span><br><span class="line">    <span class="keyword">for</span>(String str : c) &#123;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，传入泛型参数后，add方法只能接收String类型的参数，其他类型的数据无法添加到集合中，同时在遍历集合的时候，也不需要我们做类型转换了，直接使用String类型变量接收就可以了，<strong>JVM会自动转换的</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"><span class="comment">// 可以简写为菱形泛型形式：砖石表达式</span></span><br><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p><strong>菱形泛型（Diamond Operator）是JDK7中引入的一种语法糖，用于简化泛型的 类型推断过程。</strong></p>
+<p>Map接口使用泛型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Map接口也是泛型接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Map</span>&lt;K,V&gt; &#123;</span><br><span class="line">    <span class="comment">//省略...</span></span><br><span class="line">    V <span class="title function_">put</span><span class="params">(K key, V value)</span>;</span><br><span class="line">    Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="自定义泛型"><a href="#自定义泛型" class="headerlink" title="自定义泛型"></a>自定义泛型</h2><blockquote>
+<ul>
+<li>泛型类</li>
+</ul>
+<p>如果泛型参数定义在类上面，那么这个类就是一个泛型类</p>
+<p>泛型类定义格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] class 类名&lt;泛型类型名<span class="number">1</span>,泛型类型名<span class="number">2</span>,...&gt; &#123;</span><br><span class="line">    <span class="number">0</span>个或多个数据成员;</span><br><span class="line">    <span class="number">0</span>个或多个构造方法;</span><br><span class="line">    <span class="number">0</span>个或多个成员方法;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//注意：之前用确定数据类型的地方，现在使用自定义泛型类型名替代</span></span><br></pre></td></tr></table></figure>
+
+<img src="/post/59864f97/image-20230813154145407.png" class="" title="image-20230813154145407">
+
+<p>泛型类实例化对象格式： <strong>泛型类名&lt;具体类型1,具体类型2,…&gt; 对象名 &#x3D; new 泛型类名&lt;&gt;(实参列 表);</strong></p>
+<p><strong>注意：实际开发中，我们自定义泛型类的情况并不多，大家掌握定义泛型类、实例化泛型类对象的固定格式即可。</strong></p>
+<ul>
+<li>泛型接口</li>
+</ul>
+<p>如果泛型参数定义在接口上面，那么这个接口就是一个泛型接口</p>
+<p>定义格式： <strong>[修饰符] interface 接口名&lt;泛型类型名1,泛型类型名2,…&gt; { }</strong></p>
+<img src="/post/59864f97/image-20230813154552166.png" class="" title="image-20230813154552166">
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Action</span>&lt;T&gt; &#123;...&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">//创建匿名内部类</span></span><br><span class="line">    Action&lt;String&gt; a = <span class="keyword">new</span> <span class="title class_">Action</span>&lt;&gt;() &#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>泛型方法</li>
+</ul>
+<p>如果泛型参数定义在方法上面，那么这个方法就是一个泛型方法</p>
+<p>泛型方法定义格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[修饰符] &lt;泛型类型名&gt; 返回值类型 方法名(形式参数列表)&#123;</span><br><span class="line">    方法具体实现;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>泛型方法调用格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类对象.泛型方法（实参列表）;</span><br><span class="line">类名.<span class="keyword">static</span> 泛型方法（实参列表）;</span><br></pre></td></tr></table></figure>
+
+<p><font color="#d12920">注意：泛型方法调用时不需要额外指定泛型类型，系统自动识别泛型类型。</font></p>
+<p>案例展示： 在上述Circle泛型类中，补充 泛型方法<strong>disp()和static show()</strong> ，并调用， 验证上述格式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Circle</span>&lt;T,E&gt; &#123; <span class="comment">// T,E</span></span><br><span class="line">    <span class="comment">//省略...</span></span><br><span class="line">    <span class="comment">//泛型类中定义 泛型方法</span></span><br><span class="line">    <span class="keyword">public</span> &lt;F&gt; <span class="keyword">void</span> <span class="title function_">disp</span><span class="params">(F f)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;in 泛型方法disp, f: &quot;</span> + f);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 下面写法虽然不会报错，不建议大家这样写</span></span><br><span class="line">    <span class="comment">// 因为泛型方法上的 T 会和 泛型类上的 T 产生歧义</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="keyword">void</span> <span class="title function_">show</span><span class="params">(T t)</span> &#123; <span class="comment">// T</span></span><br><span class="line">        System.out.println(<span class="string">&quot;in 泛型static方法show, t: &quot;</span> + t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    Circle&lt;Integer,Integer&gt; c = <span class="keyword">new</span> <span class="title class_">Circle</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">//public &lt;F&gt; void disp(F f);</span></span><br><span class="line">    <span class="comment">//调用时系统自动识别泛型方法类型</span></span><br><span class="line">    c.disp(<span class="number">1</span>); <span class="comment">//Integer</span></span><br><span class="line">    c.disp(<span class="number">2.3</span>); <span class="comment">//Double</span></span><br><span class="line">    c.disp(<span class="string">&quot;hello&quot;</span>);<span class="comment">//String</span></span><br><span class="line">    c.disp(<span class="string">&#x27;h&#x27;</span>); <span class="comment">//Character</span></span><br><span class="line">    System.out.println(<span class="string">&quot;--------------&quot;</span>);</span><br><span class="line">    <span class="comment">//public static &lt;T&gt; void show(T t);</span></span><br><span class="line">    <span class="comment">//通过类名可以直接调用，不需要额外指定泛型类型</span></span><br><span class="line">    Circle.show(<span class="number">2.3</span>);</span><br><span class="line">    Circle.show(<span class="number">2</span>);</span><br><span class="line">    Circle.show(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/post/59864f97/image-20230813160317417.png" class="" title="image-20230813160317417">
+</blockquote>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><blockquote>
+<p>先看俩种错误的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译通过</span></span><br><span class="line"><span class="comment">//父类型的引用，指向子类对象</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1</span>);</span><br><span class="line"><span class="comment">//编译通过</span></span><br><span class="line"><span class="comment">//Object[]类型兼容所有的【引用】类型数组</span></span><br><span class="line"><span class="comment">//arr可以指向任意 引用类型 数组对象</span></span><br><span class="line">Object[] arr = <span class="keyword">new</span> <span class="title class_">Integer</span>[<span class="number">1</span>];</span><br><span class="line"><span class="comment">//编译失败</span></span><br><span class="line"><span class="comment">//注意，这个编译报错，类型不兼容</span></span><br><span class="line"><span class="comment">//int[] 是基本类型数组</span></span><br><span class="line">Object[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">1</span>];</span><br><span class="line"><span class="comment">//编译失败</span></span><br><span class="line"><span class="comment">//错误信息：ArrayList&lt;Integer&gt;无法转为ArrayList&lt;Object&gt;</span></span><br><span class="line"><span class="comment">//在编译期间，ArrayList&lt;Integer&gt;和ArrayList&lt;Object&gt;是俩个不同的类型，并且没有子父类型的关系</span></span><br><span class="line">ArrayList&lt;Object&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br></pre></td></tr></table></figure>
+
+<p><font color="#d12920">注意, &#x3D;号两边的所指定的泛型类型，必须是要一样的</font></p>
+<p>这里说的泛型类型，指的是&lt;&gt;中所指定的类型</p>
+<p><strong>虽然 Integer 是 Object 的子类型</strong>，<strong>但是 ArrayList 和 ArrayList 之间没有子父类型的关系</strong>，它们就是俩个不同的类型所以，</p>
+<p><strong>Object o &#x3D; new Integer(1);</strong> 编译通过 </p>
+<p><strong>ArrayList list &#x3D; new ArrayList();</strong> 编译报错 </p>
+<p>也就是说，俩个类型，如果是当做泛型的指定类型的时候，就没有多态的特点了</p>
+</blockquote>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><blockquote>
+<p><strong>?：可以通配任意类型</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">(Collection&lt;?&gt; c)</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：这使用test方法中的参数类型，使用了泛型，并且使用问号来表示这个泛型的类型，这个问号就是通配符，可以匹配所有的泛型类型</p>
+<p>test方法可以接收，<strong>泛型是任意引用类型</strong>的 Collection集合对象、</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">Test</span> <span class="variable">t</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Test</span>();</span><br><span class="line">    t.test(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;());</span><br><span class="line">    t.test(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;());</span><br><span class="line">    t.test(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Double&gt;());</span><br><span class="line">    t.test(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;任意引用类型&gt;());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用通配符（?）所带来的问题：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;?&gt; c;</span><br><span class="line">c = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"><span class="comment">// 编译报错</span></span><br><span class="line"><span class="comment">// 因为变量c所声明的类型是Collection，同时泛型类型是通配符（?）</span></span><br><span class="line"><span class="comment">// 那么编译器也不知道这个?将来会是什么类型，因为这个?只是一个通配符</span></span><br><span class="line"><span class="comment">// 所以，编译器不允许使用变量c来向集合中添加新数据。</span></span><br><span class="line">c.add(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="comment">// 编译通过</span></span><br><span class="line"><span class="comment">// 但是有一个值是可以添加到集合中的，null</span></span><br><span class="line"><span class="comment">// 集合中一定存的是引用类型，null是所有引用类型共同的一个值，所以一定可以添加进去。</span></span><br><span class="line">c.add(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>虽然使用通配符（?）的集合，不能再往其中添加数据了，但是可以遍历集合取 出数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    ArrayList&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    list.add(<span class="string">&quot;hello1&quot;</span>);</span><br><span class="line">    list.add(<span class="string">&quot;hello2&quot;</span>);</span><br><span class="line">    list.add(<span class="string">&quot;hello3&quot;</span>);</span><br><span class="line">    list.add(<span class="string">&quot;hello4&quot;</span>);</span><br><span class="line">    Collection&lt;?&gt; c = list;</span><br><span class="line">    <span class="comment">//编译报错</span></span><br><span class="line">    <span class="comment">//c.add(&quot;hello5&quot;);</span></span><br><span class="line">    <span class="keyword">for</span>(Object obj : c) &#123;</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="泛型边界"><a href="#泛型边界" class="headerlink" title="泛型边界"></a>泛型边界</h2><blockquote>
+<p>在默认情况下，泛型的类型是可以任意设置的，只要是引用类型就可以。</p>
+<p>如果在泛型中使用 <strong>extends 和 super</strong> 关键字，就可以对泛型的类型进行限制。 即：规定泛型的<strong>上限和下限。</strong></p>
+<img src="/post/59864f97/image-20230813163423908.png" class="" title="image-20230813163423908">
+</blockquote>
+<h3 id="泛型上限"><a href="#泛型上限" class="headerlink" title="泛型上限"></a>泛型上限</h3><blockquote>
+<ul>
+<li>例如： List &lt;? extends Number&gt; list</li>
+<li>将来引用list就可以接收泛型是<strong>Number 或者 Number子类型</strong>的List集合对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    List&lt;? <span class="keyword">extends</span> <span class="title class_">Number</span>&gt; list;</span><br><span class="line">    <span class="comment">//list可以指向泛型是Number或者Number【子】类型的集合对象</span></span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Number&gt;();</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Double&gt;();</span><br><span class="line">    <span class="comment">//编译报错，因为String不是Number类型，也不是Number的子类型</span></span><br><span class="line">    <span class="comment">//list = new ArrayList&lt;String&gt;();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>能表示数字的类型都是Number类型的子类型，例如Byte Short Integer Long 等</strong></p>
+</blockquote>
+<h3 id="泛型下限"><a href="#泛型下限" class="headerlink" title="泛型下限"></a>泛型下限</h3><blockquote>
+<ul>
+<li>例如：List &lt;? super Number&gt; list</li>
+<li>将来引用list就可以接收泛型是Number或者Number父类型的List集合对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    List&lt;? <span class="built_in">super</span> Number&gt; list;</span><br><span class="line">    <span class="comment">//list可以指向泛型是Number或者Number【父】类型的集合对象</span></span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Number&gt;();</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Serializable&gt;();</span><br><span class="line">    list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Object&gt;();</span><br><span class="line">    <span class="comment">//编译报错，因为String不是Number类型，也不是Number的父类型</span></span><br><span class="line">    <span class="comment">//list = new ArrayList&lt;String&gt;();</span></span><br><span class="line">    <span class="comment">//编译报错，因为Integer不是Number类型，也不是Number的父类型</span></span><br><span class="line">    <span class="comment">//list = new ArrayList&lt;Integer&gt;();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h2><blockquote>
+<p><strong>泛型类型仅存在于编译期间，编译后的字节码和运行时不包含泛型信息</strong>，所有的泛型类型映射到同一份字节码。</p>
+<p>由于泛型是JDK1.5才加入到Java语言特性的，Java让编译器擦除掉关于泛型类型的信息，这样使得Java可以<strong>向后兼容之前没有使用泛型的类库和代码</strong>，<strong>因为在字节码（class）层面是没有泛型概念的</strong>。</p>
+<ul>
+<li>擦除前</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Generic</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> T obj;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Generic</span><span class="params">(T o)</span> &#123;</span><br><span class="line">        obj = o;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">getObj</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>擦除后</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Generic</span> &#123; <span class="comment">// T --&gt; 消失了</span></span><br><span class="line">    <span class="keyword">private</span> Object obj;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Generic</span><span class="params">(Object o)</span> &#123; <span class="comment">// T --&gt; Object </span></span><br><span class="line">        obj = o;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">getObj</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意事项</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">// 编译报错</span></span><br><span class="line">    <span class="comment">// ArrayList&lt;Integer&gt;和new ArrayList&lt;Long&gt;在编译期间是不同的类型</span></span><br><span class="line">    <span class="comment">//		ArrayList&lt;Integer&gt; list = new ArrayList&lt;Long&gt;();</span></span><br><span class="line">    <span class="comment">// 但是编译完成后，它们对应的是同一份class文件：ArrayList.class</span></span><br><span class="line">    ArrayList&lt;Integer&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">    ArrayList&lt;Long&gt; list2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Long&gt;();</span><br><span class="line">    <span class="comment">// 大家大致能看懂即可，后续反射章节会补充</span></span><br><span class="line">    System.out.println(list1.getClass() == list2.getClass());</span><br><span class="line">    <span class="comment">// true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><font color="skyblue">注意，泛型信息被擦除后，所有的泛型类型都会统一变为原始类型：Object</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编译报错</span></span><br><span class="line"><span class="comment">//因为在编译后，泛型信息会被擦除</span></span><br><span class="line"><span class="comment">//所以下面两个run方法不会构成重载，本质上都是 public void run(List list)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(List&lt;String&gt; list)</span>&#123; <span class="comment">// String -&gt; Object</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">(List&lt;Integer&gt; list)</span>&#123; <span class="comment">// Integet -&gt; Object</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，<strong>Java的泛型只存在于编译时期</strong>，泛型使编译器可以<strong>在编译期间对类型进行检查以提高类型安全，减少运行是由于对象类型不匹配引发的异常。</strong></p>
+<p>但是在编译成功后，<strong>所有泛型信息会被擦除，变为原始类型Object</strong>。</p>
+</blockquote>
+<h2 id="泛型小结"><a href="#泛型小结" class="headerlink" title="泛型小结"></a>泛型小结</h2><blockquote>
+<img src="/post/59864f97/image-20230813165150565.png" class="" title="image-20230813165150565">
+</blockquote>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p><strong>注解（Annotation）</strong>，是J<strong>DK1.5</strong>引入的技术，用它可以对Java中的<strong>某一个段程序进行说明或标注，并且这个注解的信息可以被其他程序使用特定的方式读取到， 从而完成相应的操作。</strong></p>
+<p>例如， @Override 注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">super</span>.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>@Override功能解析：</p>
+<p>编译器在<strong>编译Person类</strong>的时候，会读取到<strong>toString方法上的注解@Override</strong>，从而帮我们检查这个方法时候是重写父类中的，如果父类中没有这个方法，则编译报错。</p>
+<p>注解和注释的区别：</p>
+<ul>
+<li>注解是给其他程序看的，通过参数的设置，可以在编译后class文件中【保留】注解的信息，其他程序读取后，可以完成特定的操作</li>
+<li>注释是给程序员看的，无论怎么设置，遍历后class文件中都是【没有】注释信息，方便程序员快速了解代码的作用或结构。</li>
+</ul>
+</blockquote>
+<h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><blockquote>
+<ul>
+<li>没有属性的注解：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> 注解名称 &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>有属性，但没有默认值的注解：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> 注解名称 &#123;</span><br><span class="line">    <span class="keyword">public</span> 属性类型 属性名();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>有属性，有默认值的注解：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> 注解名称 &#123;</span><br><span class="line">    属性类型 属性名() <span class="keyword">default</span> 默认值 ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意， public 可以省去不写，默认就是 public</strong></p>
+</blockquote>
+<h2 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h2><blockquote>
+<p>注解的<strong>使用范围</strong>，都定义在了一个<strong>枚举类</strong>中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.annotation;</span><br><span class="line"><span class="comment">/* @author  Joshua Bloch</span></span><br><span class="line"><span class="comment"> * @since 1.5</span></span><br><span class="line"><span class="comment"> * @jls 9.6.4.1 @Target</span></span><br><span class="line"><span class="comment"> * @jls 4.1 The Kinds of Types and Values</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">ElementType</span> &#123;</span><br><span class="line">    <span class="comment">/** Class, interface (including annotation type), or enum declaration */</span></span><br><span class="line">    TYPE,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Field declaration (includes enum constants) */</span></span><br><span class="line">    FIELD,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Method declaration */</span></span><br><span class="line">    METHOD,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Formal parameter declaration */</span></span><br><span class="line">    PARAMETER,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Constructor declaration */</span></span><br><span class="line">    CONSTRUCTOR,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Local variable declaration */</span></span><br><span class="line">    LOCAL_VARIABLE,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Annotation type declaration */</span></span><br><span class="line">    ANNOTATION_TYPE,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Package declaration */</span></span><br><span class="line">    PACKAGE,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Type parameter declaration</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    TYPE_PARAMETER,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Use of a type</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    TYPE_USE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>TYPE，使用在类、接口、注解、枚举等类型上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>FIELD，使用在属性上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>METHOD，使用在方法上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PARAMETER，使用在方法的参数前面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">(<span class="meta">@Test</span> String name)</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>CONSTRUCTOR，使用在构造器上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Hello</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>LOCAL_VARIABLE，使用在局部变量上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="meta">@Test</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ANNOTATION_TYPE，使用在注解类型上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Hello &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>PACKAGE，使用在包上面</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意：包注解只能在package-info.java文件中<strong>（ecplise中有这个，idea中也找到啦）</strong></p>
+<ul>
+<li>ecplise</li>
+</ul>
+<img src="/post/59864f97/image-20230813170715164.png" class="" title="image-20230813170715164">
+
+<img src="/post/59864f97/image-20230813175222518.png" class="" title="image-20230813175222518">
+
+<ul>
+<li>idea</li>
+</ul>
+<img src="/post/59864f97/image-20230815135848838.png" class="" title="image-20230815135848838">
+
+<img src="/post/59864f97/image-20230815135927578.png" class="" title="image-20230815135927578">
+
+<p>注意，package-info.java文件里面，只能包含package声明，并做出描 述，以便将来生成doc文件，可以从API源码src.zip中，看到每个包下面 都可以对应的package-info.java文件对该包做出描述</p>
+<ul>
+<li>TYPE_PARAMETER，使用在声明泛型参数前面，JDK8新增</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="meta">@Test</span> T&gt; <span class="keyword">void</span> <span class="title function_">sendMsg</span><span class="params">(T t)</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Action</span>&lt;<span class="meta">@Test</span> T&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>TYPE_USE，<strong>使用在代码中任何类型前面</strong>，JDK8新增</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Hello</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">say</span><span class="params">(<span class="meta">@Test</span> String name)</span> &#123;</span><br><span class="line">        List&lt;<span class="meta">@Test</span> String&gt; list = <span class="literal">null</span>;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="meta">@Test</span> String(<span class="string">&quot;briup&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> (<span class="meta">@Test</span> String) obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="保持"><a href="#保持" class="headerlink" title="保持"></a>保持</h2><blockquote>
+<p>类中使用的注解，根据配置，可以【保持】到三个不同的阶段：</p>
+<ul>
+<li>SOURCE，注解只保留在源文件，当Java文件编译成class文件的时候，注解被遗弃。</li>
+<li>CLASS，注解被保留到class文件，但jvm加载class文件时候被遗弃</li>
+<li>RUNTIME，注解不仅被保存到class文件中，jvm加载class文件之后，仍然存在</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.annotation; </span><br><span class="line"><span class="comment">/* @author  Joshua Bloch</span></span><br><span class="line"><span class="comment"> * @since 1.5</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">RetentionPolicy</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be discarded by the compiler.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    SOURCE,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be recorded in the class file by the compiler</span></span><br><span class="line"><span class="comment">     * but need not be retained by the VM at run time.  This is the default</span></span><br><span class="line"><span class="comment">     * behavior.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    CLASS,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Annotations are to be recorded in the class file by the compiler and</span></span><br><span class="line"><span class="comment">     * retained by the VM at run time, so they may be read reflectively.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> java.lang.reflect.AnnotatedElement</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    RUNTIME</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，Retention是保留、保持的意思，Policy是政策、策略的意思</strong></p>
+<ul>
+<li>如果需要在运行时去动态获取注解信息，那只能用RUNTIME注解，比如@Deprecated使用RUNTIME注解</li>
+<li>如果要在编译时进行一些预处理操作，比如生成一些辅助代码，就用CLASS注解</li>
+<li>如果只是做一些检查性的操作，比如@Override和@SupperessWarnings，使用SOURCE注解</li>
+</ul>
+<p>注意：因为RUNTIME的生命周期最长，所以其他两种情况能作用到的阶段，使用RUNTIME也一定能作用到</p>
+</blockquote>
+<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><blockquote>
+<p>在我们进行自定义注解的时候，一般会使用到元注解，来设置自定义注解的基本 特点。所以，<strong>元注解也就是对注解进行基本信息设置的注解。</strong></p>
+<p>常用的元注解：</p>
+<ul>
+<li>@Target：用于描述注解的使用范围，例如用在类上面还是方法上面</li>
+<li>@Retention：用于描述注解的保存策略，是保留到源代码中、Class文件中、还是加载到内存中</li>
+<li>@Documented：用于描述该注解将会被javadoc生产到API文档中</li>
+<li>@Inherited：<strong>用户表示某个被标注的类型是被继承的</strong>，如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class子类。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.SOURCE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Override &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(value = &#123; ElementType.CONSTRUCTOR, ElementType.FIELD, ElementType.LOCAL_VARIABLE, ElementType.METHOD,</span></span><br><span class="line"><span class="meta">                 ElementType.PACKAGE, ElementType.PARAMETER, ElementType.TYPE &#125;)</span></span><br><span class="line"><span class="meta">@interface</span> MyAnnoation &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR,</span></span><br><span class="line"><span class="meta">         LOCAL_VARIABLE&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.SOURCE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> SuppressWarnings &#123;</span><br><span class="line">    String[] value(); <span class="comment">// 有属性</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;TYPE, FIELD, METHOD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Resource &#123;</span><br><span class="line">    String <span class="title function_">name</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    String <span class="title function_">lookup</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    Class&lt;?&gt; type() <span class="keyword">default</span> java.lang.Object.class;</span><br><span class="line">    <span class="keyword">enum</span> <span class="title class_">AuthenticationType</span> &#123;</span><br><span class="line">        CONTAINER,</span><br><span class="line">        APPLICATION</span><br><span class="line">    &#125;</span><br><span class="line">    AuthenticationType <span class="title function_">authenticationType</span><span class="params">()</span> <span class="keyword">default</span></span><br><span class="line">        AuthenticationType.CONTAINER;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">shareable</span><span class="params">()</span> <span class="keyword">default</span> <span class="literal">true</span>;</span><br><span class="line">    String <span class="title function_">mappedName</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">    String <span class="title function_">description</span><span class="params">()</span> <span class="keyword">default</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><blockquote>
+<ul>
+<li>元数据信息：注解本身不会直接影响程序的执行，而是提供了一种用于存储和传递元数据的方式。元数据是关于程序中元素的描述信息，可以包含<strong>名称、类型、范围、约束</strong>等信息，用于辅助程序的开发、编译和执行。</li>
+<li>内置注解：Java提供了一些内置的注解，例如**@Overried、@Deprecated、@SuppressWarnings<strong>等。这些注解用于提供关于方</strong>法覆盖、过时方法、警告抑制**等信息，编译器和工具可以根据注解来执行相应的处理。</li>
+<li>自定义注解：Java也允许开发者自定义注解，通过**@interface关键字**定义新的注解类型。自定义注解可以包含元素（成员变量），可以为这些元素指定默认值，并可以在程序中使用注解，并提取注解中的元素值。</li>
+<li>应用领域：注解在Java中被广泛应用于各个领域，例如<strong>框架开发、测试工 具、持久化框架、Web开发</strong>等。通过注解，可以提供更丰富的配置和行为控 制，简化了代码的编写和配置。</li>
+<li>本章对于注解的掌握仅限于元<strong>数据信息的认识、内置注解的认识</strong>等，在后期学习反射的时候会完善自定义注解的学习，并且使用反射机制获取注解 并进行操作。</li>
+</ul>
+</blockquote>
+<h1 id="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"><a href="#❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！" class="headerlink" title="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"></a>❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</h1><blockquote>
+<p>自信人生二百年，会当水击三千里。💪</p>
+</blockquote>
+<div class="bilibili">
+   <iframe src="//player.bilibili.com/player.html?aid=244692322&bvid=BV1ov411C7YV&cid=238308474&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+
+
+</font>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">lwsj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/59864f97.html">http://example.com/post/59864f97.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">楚门的世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://images.lzwgxust.top/image/202308131508615.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/6eb1d8a7.html" title="09-异常"><img class="cover" src="https://images.lzwgxust.top/image/202308131949807.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">09-异常</div></div></a></div><div class="next-post pull-right"><a href="/post/cede7098.html" title="08-1-集合"><img class="cover" src="https://images.lzwgxust.top/image/202308031544535.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">08-1-集合</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/64bc2f62.html" title="expand-04-JUC深入并发编程"><img class="cover" src="https://images.lzwgxust.top/image/202309152235367.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-15</div><div class="title">expand-04-JUC深入并发编程</div></div></a></div><div><a href="/post/7657946b.html" title="expand-03-深入jdk源码"><img class="cover" src="https://images.lzwgxust.top/image/202309182331989.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-15</div><div class="title">expand-03-深入jdk源码</div></div></a></div><div><a href="/post/804f8197.html" title="expand-02-jdk8新特性"><img class="cover" src="https://images.lzwgxust.top//image/202308291701687.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-29</div><div class="title">expand-02-jdk8新特性</div></div></a></div><div><a href="/post/36aef600.html" title="expand-01-深入Java虚拟机"><img class="cover" src="https://images.lzwgxust.top//image/202308261107559.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-26</div><div class="title">expand-01-深入Java虚拟机</div></div></a></div><div><a href="/post/24d8961c.html" title="13-类加载-反射"><img class="cover" src="https://images.lzwgxust.top/image/202308191000694.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-21</div><div class="title">13-类加载-反射</div></div></a></div><div><a href="/post/91f908d8.html" title="12-网络编程"><img class="cover" src="https://images.lzwgxust.top//image/202308211353106.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-19</div><div class="title">12-网络编程</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">泛型概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">泛型应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%9B%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">自定义泛型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">2.4.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="toc-number">2.5.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E8%BE%B9%E7%95%8C"><span class="toc-number">2.6.</span> <span class="toc-text">泛型边界</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E4%B8%8A%E9%99%90"><span class="toc-number">2.6.1.</span> <span class="toc-text">泛型上限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E4%B8%8B%E9%99%90"><span class="toc-number">2.6.2.</span> <span class="toc-text">泛型下限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%93%A6%E9%99%A4"><span class="toc-number">2.7.</span> <span class="toc-text">类型擦除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B%E5%B0%8F%E7%BB%93"><span class="toc-number">2.8.</span> <span class="toc-text">泛型小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4"><span class="toc-number">3.3.</span> <span class="toc-text">范围</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81"><span class="toc-number">3.4.</span> <span class="toc-text">保持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="toc-number">3.5.</span> <span class="toc-text">元注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">3.6.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%E5%BF%99%E7%A2%8C%E7%9A%84%E6%95%B2%E4%BB%A3%E7%A0%81%E4%B9%9F%E4%B8%8D%E8%A6%81%E5%BF%98%E4%BA%86%E6%B5%AA%E6%BC%AB%E9%B8%AD%EF%BC%81"><span class="toc-number">4.</span> <span class="toc-text">❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://images.lzwgxust.top/image/202308131508615.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By lwsj</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lzwgxust.top/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lzwgxust.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="8443569355" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
