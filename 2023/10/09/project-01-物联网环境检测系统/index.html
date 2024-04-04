@@ -1,0 +1,730 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>project-01-物联网环境检测系统 | 恰同学青年</title><meta name="keywords" content="project"><meta name="author" content="Baylor Luo,2898175301@qq.com"><meta name="copyright" content="Baylor Luo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="project-01-物联网环境检测系统"><meta name="application-name" content="project-01-物联网环境检测系统"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="project-01-物联网环境检测系统"><meta property="og:url" content="http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/index.html"><meta property="og:site_name" content="恰同学青年"><meta property="og:description" content="✨你好啊，我是“ 罗师傅”，是一名程序猿哦。🌍主页链接：楚门的世界 - 一个热爱学习和运动的程序猿☀️博文主更方向为：分享自己的快乐 briup-jp3-ing❤️一个“不想让我曾没有做好而成为你的遗憾”的博主。💪很高兴与你相遇，一起加油！  前言 项目简介：传感器采集环境数据，通过数据服"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="Baylor Luo"><meta property="article:tag" content="恰同学青年"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="✨你好啊，我是“ 罗师傅”，是一名程序猿哦。🌍主页链接：楚门的世界 - 一个热爱学习和运动的程序猿☀️博文主更方向为：分享自己的快乐 briup-jp3-ing❤️一个“不想让我曾没有做好而成为你的遗憾”的博主。💪很高兴与你相遇，一起加油！  前言 项目简介：传感器采集环境数据，通过数据服"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: 'https://twikoo.lzwgxust.top/',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: {"apiurl":null},
+  navMusic: true,
+  mainTone: {"mode":"both","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    simplehomepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Baylor Luo","link":"链接: ","source":"来源: 恰同学青年","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: {"enable":true,"delay":100,"shiftDelay":200},
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '恰同学青年',
+  title: 'project-01-物联网环境检测系统',
+  postAI: '',
+  pageFillDescription: '前言, 数据分析, 项目特色, SVN版本控制 –gt git版本控制, Maven项目依赖控制, 分功能处理, 第三方jar包, ConfigurationImpl, ThreadPoolExecutor, RandomAccessFile, 插入和批处理, 本地与服务器联调, 收获与喜悦, ❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！你好啊我是罗师傅是一名程序猿哦主页链接楚门的世界一个热爱学习和运动的程序猿博文主更方向为分享自己的快乐一个不想让我曾没有做好而成为你的遗憾的博主很高兴与你相遇一起加油前言项目简介传感器采集环境数据通过数据服务中心处理环境参数对采集网络入库日志配置备份功能的分离进而实现农棚设备的自动控制实现智能监控避免人工误操作项目代码数据分析需要处理的数据格式如下数据解析发送端树莓派系统实验箱区域模块模块上传感器地址表示温度和湿度数据表示光照强度数据表示二氧化碳数据传感器个数指令标号如果是表示需要接受数据如果是表示需要发送数据环境数据状态标识默认为表示成功采集时间特别注意关于一行中的第个数据部分如果当前是温度和湿度的数据则前两个字节是温度中间两个字节是湿度剩余字节不用管如果当前是光照强度的数据则前两个字节就是数据值剩余字节不用管如果当前是二氧化碳的数据则前两个字节就是数据值剩余字节不用管注意一个字节可以由个十六进制表示一个字节位一个十六进制位把十六进制的环境数据转为十进制的数据之后还需要进一步处理公式无需深究直接用即可专业人士提供如果是温度数据如果是湿度数据如果是二氧化碳和光照强度直接转换得到的十进制数据就可以表示项目特色版本控制版本控制具体是什么轻松上手无忧版首先一开始使用进行版本控制感觉到如果只是自己进行版本控制的话还挺好用的但是多人用起来的话的合并分支真的是一言难尽苦不堪言每次从合并到的时候总是会出现一些小问题呜呜呜由于项目更多是个人独立开发所以并没有设计到更多的合并冲突等等问题有了进行版本控制当我们发现当前版本开发错了或者是感觉还不如前面的版本的话可以很方便的进行版本回退同时多人合作的时候可以开不同权限的分支我们只需要专注于自己设计的模块项目依赖控制可以对项目中大量的第三方包进行依赖管理大量的包可以到中央仓库中直接复制依赖即可会自动到中央仓库下载同时子父项目的结构可以减少重复导入依赖的过程便于依赖管理使用指令的方式将项目原有的接口包导入至本地仓库当中分功能处理大的方面将项目分为三个子模块分别是其中按照功能分出采集端网络备份日志配置端网络入库功能分析采集主要将传感器生成的数据采集到程序中端网络将处理好的数据通过发送给端备份主要避免重复发送数据计划只发送新采集到的数据同时保存好数据用于之后的数据分析和展示日志按照不同的输出级别将信息保存起来同时将日志信息输出到控制台当中配置将上面各个功能的对象初始化的功能抽离出来同时保证每个模块读取配置文件的时候自动将配置文件中的数据注入到对应的对象属性值当中端网络接收到端发送过来的数据将数据反序列化后交给入库功能入库将数据保存到数据库当中按照不同时间存放到不同的表当中一共有张表第三方包增强日志功能输出信息到控制抬输出级别以上的日志到输出级别以上的日志到连接池初始化连接数量最大连接数最大等待时间读取配置文件使用读取文件内容读到权限类名输出在下面介绍注三级标签名不要相同准备一个集合所有的主逻辑都在构造器里写使用读取文件内容读到权限类名输出得到每一个子节点中属性值通过反射创建都对象判断是否实现了同时判断是否有有的话将每个二级子节点放入到当中端创建线程池要做什么事情接收数据入库通过获取对象定义个来返回结果的集合统计下各个数据的条数温湿度光照使可以随意访问件的位置访问上次件的尾部的字节数读取件件输字符流缓冲流希望件有更新的时候才采集没有更新就不采集备份模块的法判断备份件是否存在如果备份件存在和当前件做个对看是否有更新根据件备份的内容可以是数据可以是也可以是本这推荐每次读取的数据量或者是指针保存的度如果备份件于采集件从新添加的位置开始读本次需要读取的件度有更新从保存的位置开始读取读到件是否要进下换件出错了件度出现错误备份的内容要少件没有变化件内容更新对数据进些操作数据处理省略备份获取当前最新的指针位置进保存调备份模块件备份成功输出本次共采集环境数据条其中温度数据条湿度数据条光照强度数据条浓度数据条关闭连接插入和批处理获取连接对象定义一个语句对象定义一个前一天的变量定义一个统计个数的变量集合遍历取出每一个对象根据时间中的天数插入到不同的表里或者使用包根据天数来构建插入语句控制的数量最多只有个加入数据批处理入库成功注意这里有一个超级细节的地方就是时间问题因为我们处在东八区所以传感器生成数据的时间是东八区的时间如果这个时候我们使用存入数据库的化会出现号的数据出现在号的表中解决方法使用当然这里还涉及到如何创建张不同的日期表的问题哈使用存储过程建表传感器名称发送端树莓派系统模块上传感器地址传感器个数指令标号表示需要接受数据表示需要发送数据采集的数据状态标示默认为表示成功采集时间数据详情日表本地与服务器联调将端打成包丢到服务器上通过启动端启动本地端将数据到端收获与喜悦故余虽愚卒获有所闻本项目没有使用到等热门的框架重在理解执行流程项目的难点数据处理能否正确的理解好数据以及处理好数据真的是至关重要的封装一个好的封装能够很大程度上简化代码但是难度颇高性能优化大量的插入数据考虑批量插入如果有多个客户端发送数据考虑线程池创建张不同日期的表使用中的存储过程实现忙碌的敲代码也不要忘了浪漫鸭此博文会持续更新记得常回来看看哦一起加油做出更好看更有用的博文呀',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-03 08:28:06',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imsyy.lzwgxust.top/" title="个人首页"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/13/64d8c2748ef34.jpg" alt="个人首页"/><span class="back-menu-item-text">个人首页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.lzwgxust.top/" title="楚门的世界"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="楚门的世界"/><span class="back-menu-item-text">楚门的世界</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">恰同学青年</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://3o.hk/images/2024/04/02/0462e1ad876a74ec07f663979a4a5ac4.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://3o.hk/images/2024/04/02/0462e1ad876a74ec07f663979a4a5ac4.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://3o.hk/images/2024/04/02/e9e66e5ced16af6eb936bdb9114fa4cd.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://3o.hk/images/2024/04/02/e9e66e5ced16af6eb936bdb9114fa4cd.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/BitWarden/" style="font-size: 1.05rem;">BitWarden<sup>1</sup></a><a href="/tags/SpringMVC/" style="font-size: 1.05rem;">SpringMVC<sup>1</sup></a><a href="/tags/Word/" style="font-size: 1.05rem;">Word<sup>1</sup></a><a href="/tags/algorithm/" style="font-size: 1.05rem;">algorithm<sup>2</sup></a><a href="/tags/chatgpt/" style="font-size: 1.05rem;">chatgpt<sup>1</sup></a><a href="/tags/ecplise/" style="font-size: 1.05rem;">ecplise<sup>1</sup></a><a href="/tags/git/" style="font-size: 1.05rem;">git<sup>1</sup></a><a href="/tags/github/" style="font-size: 1.05rem;">github<sup>3</sup></a><a href="/tags/go/" style="font-size: 1.05rem;">go<sup>3</sup></a><a href="/tags/goland/" style="font-size: 1.05rem;">goland<sup>1</sup></a><a href="/tags/gulimail/" style="font-size: 1.05rem;">gulimail<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>2</sup></a><a href="/tags/idea/" style="font-size: 1.05rem;">idea<sup>2</sup></a><a href="/tags/interview/" style="font-size: 1.05rem;">interview<sup>2</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>23</sup></a><a href="/tags/jdk/" style="font-size: 1.05rem;">jdk<sup>1</sup></a><a href="/tags/jdk8/" style="font-size: 1.05rem;">jdk8<sup>1</sup></a><a href="/tags/linux/" style="font-size: 1.05rem;">linux<sup>3</sup></a><a href="/tags/markdown/" style="font-size: 1.05rem;">markdown<sup>1</sup></a><a href="/tags/mysql/" style="font-size: 1.05rem;">mysql<sup>5</sup></a><a href="/tags/navicat/" style="font-size: 1.05rem;">navicat<sup>1</sup></a><a href="/tags/ppt/" style="font-size: 1.05rem;">ppt<sup>1</sup></a><a href="/tags/project/" style="font-size: 1.05rem;">project<sup>3</sup></a><a href="/tags/spotify/" style="font-size: 1.05rem;">spotify<sup>1</sup></a><a href="/tags/springboot/" style="font-size: 1.05rem;">springboot<sup>1</sup></a><a href="/tags/svn/" style="font-size: 1.05rem;">svn<sup>1</sup></a><a href="/tags/temp/" style="font-size: 1.05rem;">temp<sup>1</sup></a><a href="/tags/template/" style="font-size: 1.05rem;">template<sup>2</sup></a><a href="/tags/utools/" style="font-size: 1.05rem;">utools<sup>2</sup></a><a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 1.05rem;">内网穿透<sup>1</sup></a><a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 1.05rem;">油猴<sup>1</sup></a><a href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/" style="font-size: 1.05rem;">百度网盘<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">后端开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/project/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>project</span></a></span></div></div><h1 class="post-title" itemprop="name headline">project-01-物联网环境检测系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-10-09T08:06:22.000Z" title="发表于 2023-10-09 16:06:22">2023-10-09</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-04-03T00:28:06.513Z" title="更新于 2024-04-03 08:28:06">2024-04-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.6k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="project-01-物联网环境检测系统"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为广西"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>广西</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/#post-comment" tabindex="-1"><span id="twikoo-count"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"><header><a class="post-meta-categories" href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">后端开发</a><a href="/tags/project/" tabindex="-1" itemprop="url">project</a><h1 id="CrawlerTitle" itemprop="name headline">project-01-物联网环境检测系统</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Baylor Luo</span><time itemprop="dateCreated datePublished" datetime="2023-10-09T08:06:22.000Z" title="发表于 2023-10-09 16:06:22">2023-10-09</time><time itemprop="dateCreated datePublished" datetime="2024-04-03T00:28:06.513Z" title="更新于 2024-04-03 08:28:06">2024-04-03</time></header><font face="zhuZiAWan" size="3">
+
+<blockquote>
+<p>✨你好啊，我是“ 罗师傅”，是一名程序猿哦。<br>🌍主页链接：<a target="_blank" rel="noopener" href="https://luozongwei.github.io/">楚门的世界 - 一个热爱学习和运动的程序猿</a><br>☀️博文主更方向为：分享自己的快乐 briup-jp3-ing<br>❤️一个“不想让我曾没有做好而成为你的遗憾”的博主。<br>💪很高兴与你相遇，一起加油！</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>项目简介：传感器采集环境数据，通过数据服务中心处理环境参数，对采集、网络、入库、日志、配置、备份功能的分离，进而实现农棚设备的自动控制，实现智能监控，避免人工误操作。</p>
+<p>项目代码：<a target="_blank" rel="noopener" href="https://gitee.com/luozongwei/IoT-Data-Center">https://gitee.com/luozongwei/IoT-Data-Center</a></p>
+</blockquote>
+<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><p>需要处理的数据格式如下：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">100|101|2|16|1|3|57a491fc02|1|1516413763738</span><br><span class="line">100|101|2|16|1|3|57a891fc02|1|1516413764761</span><br><span class="line">100|101|2|16|1|3|57a491fc02|1|1516413765686</span><br><span class="line">100|101|2|256|1|3|001c03|1|1516413766708</span><br><span class="line">100|101|2|256|1|3|001c03|1|1516413767731</span><br><span class="line">100|101|2|16|1|3|57a492d002|1|1516413768756</span><br><span class="line">100|101|2|1280|1|3|02f801|1|1516413769787</span><br><span class="line">100|101|2|1280|1|3|02f801|1|1516413770702</span><br></pre></td></tr></table></figure>
+
+<p>数据解析：</p>
+<ol>
+<li>发送端id </li>
+<li>树莓派系统id</li>
+<li>实验箱区域模块id(1-8) </li>
+<li>模块上传感器地址 <ul>
+<li>16，表示温度和湿度数据 </li>
+<li>256，表示光照强度数据 </li>
+<li>1280，表示二氧化碳数据</li>
+</ul>
+</li>
+<li>传感器个数 </li>
+<li>指令标号 如果是3表示需要接受数据，如果是16表示需要发送数据 </li>
+<li>环境数据 </li>
+<li>状态标识 默认为1，表示成功 </li>
+<li>采集时间</li>
+</ol>
+<p>特别注意，关于一行中的第7个数据部分：</p>
+<ul>
+<li>如果当前是温度和湿度的数据，则前两个字节是温度，中间两个字节是湿 度，剩余字节不用管 </li>
+<li>如果当前是光照强度的数据，则前两个字节就是数据值，剩余字节不用管 </li>
+<li>如果当前是二氧化碳的数据，则前两个字节就是数据值，剩余字节不用管</li>
+</ul>
+<blockquote>
+<p><font color="#d12920">注意，一个字节可以由2个十六进制表示 （一个字节8位，一个十六进制4位）</font></p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231009192010142.png" alt="image-20231009192010142"></p>
+<p>把十六进制的环境数据，转为十进制的数据之后，还需要进一步处理：（公式无需深究，直接用即可，专业人士提供）</p>
+<ul>
+<li>如果是温度数据：(data*(0.00268127F))-46.85F</li>
+<li>如果是湿度数据：(data*0.00190735F)-6 </li>
+<li>如果是二氧化碳和光照强度，直接转换得到的十进制数据就可以表示</li>
+</ul>
+<h1 id="项目特色"><a href="#项目特色" class="headerlink" title="项目特色"></a>项目特色</h1><h2 id="SVN版本控制-–-git版本控制"><a href="#SVN版本控制-–-git版本控制" class="headerlink" title="SVN版本控制 –&gt; git版本控制"></a>SVN版本控制 –&gt; git版本控制</h2><blockquote>
+<p>SVN具体是什么：<a target="_blank" rel="noopener" href="https://www.lzwgxust.top/post/51ee138b.html">SVN轻松上手无忧版</a></p>
+<p>首先一开始使用SVN进行版本控制，感觉到如果只是自己进行版本控制的话还挺好用的，但是多人用起来的话svn的<strong>合并分支</strong>真的是一言难尽，苦不堪言！ 每次从branches 合并到 trunk的时候总是会出现一些小问题呜呜呜~~</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231009184310773.png" alt="image-20231009184310773"></p>
+<p>由于项目更多是个人独立开发所以并没有设计到更多的合并、冲突等等问题</p>
+<p>有了SVN&#x2F;git进行版本控制，当我们发现当前版本开发错了或者是感觉还不如前面的版本的话，可以很方便的进行版本回退。</p>
+<p>同时多人合作的时候，可以开不同权限的分支，我们只需要专注于自己设计的模块</p>
+</blockquote>
+<h2 id="Maven项目依赖控制"><a href="#Maven项目依赖控制" class="headerlink" title="Maven项目依赖控制"></a>Maven项目依赖控制</h2><blockquote>
+<p>idea  Maven可以对项目中大量的第三方jar包进行依赖管理</p>
+<p>大量的jar包可以到maven中央仓库中直接复制依赖dependency即可，idea会自动到中央仓库下载</p>
+<p>同时子父项目的结构可以减少重复导入依赖的过程便于依赖管理</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231009193013078.png" alt="image-20231009193013078"></p>
+<p>使用指令的方式将项目原有的接口jar包 导入至本地maven仓库当中：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=com.briup.env -DartifactId=env-gather-base -Dversion=1.0-SNAPSHOT -Dpackaging=jar -Dfile=env-gather-base-1.0-SNAPSHOT.jar -DgeneratePom=true</span><br></pre></td></tr></table></figure>
+
+<h2 id="分功能处理"><a href="#分功能处理" class="headerlink" title="分功能处理"></a>分功能处理</h2><p>大的方面将项目分为三个子模块，分别是client、common、server 其中：</p>
+<ul>
+<li>client 按照功能分出：采集、client端网络、备份</li>
+<li>common：日志、配置</li>
+<li>server ：server端网络、入库</li>
+</ul>
+<p>功能分析：</p>
+<ul>
+<li>采集：主要将传感器生成的数据采集到java程序中</li>
+<li>client端网络：将处理好的数据通过send发送给server端</li>
+<li>备份：主要避免重复发送数据，计划只发送新采集到的数据，同时保存好数据用于之后的数据分析和展示</li>
+<li>日志：按照不同的输出级别将信息保存起来，同时将日志信息输出到控制台当中</li>
+<li>配置：将上面各个功能的对象初始化的功能抽离出来，同时保证每个模块读取config.xml配置文件的时候自动将配置文件中的数据注入到对应的对象属性值当中</li>
+<li>server端网络：接收到client端发送过来的数据，将数据反序列化后交给入库功能</li>
+<li>入库：将数据保存到数据库当中（按照不同时间存放到不同的表当中，一共有31张表）</li>
+</ul>
+<h2 id="第三方jar包"><a href="#第三方jar包" class="headerlink" title="第三方jar包"></a>第三方jar包</h2><ul>
+<li>log4j：增强日志功能</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># OFF FATAL ERROR WARN INFO DEBUG TRACE ALL</span></span><br><span class="line"><span class="attr">log4j.rootLogger</span> = <span class="string">debug,stdout,D,E</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">### 输出信息到控制抬 ###</span></span><br><span class="line"><span class="attr">log4j.appender.stdout</span> = <span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="attr">log4j.appender.stdout.Target</span> = <span class="string">System.out</span></span><br><span class="line"><span class="attr">log4j.appender.stdout.layout</span> = <span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.stdout.layout.ConversionPattern</span> = <span class="string">[%-5p] %d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; method:%l%n%m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">### 输出DEBUG 级别以上的日志到=/home/hao/Desktop/error.log ###</span></span><br><span class="line"><span class="attr">log4j.appender.D</span> = <span class="string">org.apache.log4j.DailyRollingFileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.D.File</span> = <span class="string">debug.log</span></span><br><span class="line"><span class="attr">log4j.appender.D.Append</span> = <span class="string">true</span></span><br><span class="line"><span class="attr">log4j.appender.D.Threshold</span> = <span class="string">DEBUG</span></span><br><span class="line"><span class="attr">log4j.appender.D.layout</span> = <span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.D.layout.ConversionPattern</span> = <span class="string">%-d&#123;yyyy-MM-dd HH:mm:ss&#125;  [ %t:%r ] - [ %p ]  %m%n</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">### 输出ERROR 级别以上的日志到=/home/hao/Desktop/error.log ###</span></span><br><span class="line"><span class="attr">log4j.appender.E</span> = <span class="string">org.apache.log4j.DailyRollingFileAppender</span></span><br><span class="line"><span class="attr">log4j.appender.E.File</span> = <span class="string">error.log</span></span><br><span class="line"><span class="attr">log4j.appender.E.Append</span> = <span class="string">true</span></span><br><span class="line"><span class="attr">log4j.appender.E.Threshold</span> = <span class="string">ERROR</span></span><br><span class="line"><span class="attr">log4j.appender.E.layout</span> = <span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="attr">log4j.appender.E.layout.ConversionPattern</span> = <span class="string">%-d&#123;yyyy-MM-dd HH:mm:ss&#125;  [ %t:%r ] - [ %p ]  %m%n</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>druid：连接池</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://127.0.0.1:3306/envir?serverTimezone=Asia/Shanghai&amp;useServerPrepStmts=true</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">lwsj</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">xxxxxx</span></span><br><span class="line"><span class="comment"># 初始化连接数量</span></span><br><span class="line"><span class="attr">initialSize</span>=<span class="string">5</span></span><br><span class="line"><span class="comment"># 最大连接数</span></span><br><span class="line"><span class="attr">maxActive</span>=<span class="string">10</span></span><br><span class="line"><span class="comment"># 最大等待时间</span></span><br><span class="line"><span class="attr">maxWait</span>=<span class="string">3000</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>dom4j：读取.xml配置文件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用dom4j，读取xml文件内容，读到权限类名，输出</span></span><br><span class="line"><span class="type">SAXReader</span> <span class="variable">saxReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SAXReader</span>();</span><br><span class="line">document = saxReader.read(resource);</span><br><span class="line">parse(document); <span class="comment">// parse在下面介绍</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ConfigurationImpl"><a href="#ConfigurationImpl" class="headerlink" title="ConfigurationImpl"></a>ConfigurationImpl</h2><ul>
+<li>config.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="comment">&lt;!--注:三级标签名不要相同--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">class</span>=<span class="string">&quot;com.briup.env.util.LogImpl&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">backup</span> <span class="attr">class</span>=<span class="string">&quot;com.briup.env.util.BackupImpl&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">backup</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span> <span class="attr">class</span>=<span class="string">&quot;com.briup.server.ServerImpl&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">server-port</span>&gt;</span>9000<span class="tag">&lt;/<span class="name">server-port</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">core-pool-size</span>&gt;</span>5<span class="tag">&lt;/<span class="name">core-pool-size</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">maxinum-pool-size</span>&gt;</span>10<span class="tag">&lt;/<span class="name">maxinum-pool-size</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">keep-alive-time</span>&gt;</span>2000<span class="tag">&lt;/<span class="name">keep-alive-time</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dbStore</span> <span class="attr">class</span>=<span class="string">&quot;com.briup.server.DBStoreImpl&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">db-backup-file-path</span>&gt;</span>server/src/main/resources/db-backup<span class="tag">&lt;/<span class="name">db-backup-file-path</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">batch-size</span>&gt;</span>5000<span class="tag">&lt;/<span class="name">batch-size</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dbStore</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ConfigurationImpl.java</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 准备一个map集合</span></span><br><span class="line">Map&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="title function_">ConfigurationImpl</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 所有的主逻辑，都在构造器里写</span></span><br><span class="line">    <span class="comment">// 使用dom4j，读取xml文件内容，读到权限类名，输出</span></span><br><span class="line">    <span class="type">SAXReader</span> <span class="variable">saxReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SAXReader</span>();</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">resource</span> <span class="operator">=</span> ConfigurationImpl.class.getClassLoader().getResourceAsStream(<span class="string">&quot;config.xml&quot;</span>);</span><br><span class="line">    <span class="type">Document</span> <span class="variable">document</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        document = saxReader.read(resource);</span><br><span class="line">        parse(document);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (DocumentException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parse</span><span class="params">(Document document)</span> &#123;</span><br><span class="line">    <span class="type">Element</span> <span class="variable">root</span> <span class="operator">=</span> document.getRootElement();</span><br><span class="line">    List&lt;Element&gt; elements = root.elements();</span><br><span class="line">    <span class="keyword">for</span> (Element element : elements) &#123;</span><br><span class="line">        <span class="comment">// 1、得到每一个子节点中 class属性值</span></span><br><span class="line">        <span class="type">Attribute</span> <span class="variable">aClass</span> <span class="operator">=</span> element.attribute(<span class="string">&quot;class&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">classPath</span> <span class="operator">=</span> aClass.getText();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 2、通过反射创建都对象</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; aClass1 = Class.forName(classPath);</span><br><span class="line">            Constructor&lt;?&gt; constructor = aClass1.getDeclaredConstructor(<span class="literal">null</span>);</span><br><span class="line">            o = constructor.newInstance();</span><br><span class="line">            <span class="comment">// 3、判断是否实现了PropertiesAware 同时 判断是否有properties</span></span><br><span class="line">            <span class="comment">// 有的话将 每个二级子节点放入到properties当中</span></span><br><span class="line">            <span class="keyword">if</span> (o <span class="keyword">instanceof</span> PropertiesAware) &#123;</span><br><span class="line">                <span class="type">PropertiesAware</span> <span class="variable">propertiesAware</span> <span class="operator">=</span> (PropertiesAware) o;</span><br><span class="line">                List&lt;Element&gt; elements1 = element.elements();</span><br><span class="line">                <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">                <span class="keyword">for</span> (Element element1 : elements1) &#123;</span><br><span class="line">                    properties.put(element1.getName(), element1.getText());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    propertiesAware.init(properties);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(element.getName(), o);</span><br><span class="line">            map.forEach((k, v) -&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (v <span class="keyword">instanceof</span> ConfigurationAware) &#123;</span><br><span class="line">                    <span class="type">ConfigurationAware</span> <span class="variable">configurationAware</span> <span class="operator">=</span> (ConfigurationAware) v;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        configurationAware.setConfiguration(<span class="built_in">this</span>);</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException | NoSuchMethodException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InvocationTargetException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InstantiationException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231015161418138.png" alt="image-20231015161418138"></p>
+<h2 id="ThreadPoolExecutor"><a href="#ThreadPoolExecutor" class="headerlink" title="ThreadPoolExecutor"></a>ThreadPoolExecutor</h2><p>server端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建线程池</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ThreadPoolExecutor</span> <span class="variable">executor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(</span><br><span class="line">    <span class="number">5</span>, <span class="number">10</span>,</span><br><span class="line">    <span class="number">2000</span>, TimeUnit.MILLISECONDS,</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">ArrayBlockingQueue</span>&lt;Runnable&gt;(<span class="number">5</span>),</span><br><span class="line">    Executors.defaultThreadFactory(),</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.AbortPolicy());</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!stop) &#123;</span><br><span class="line">    <span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> server.accept();</span><br><span class="line">    executor.execute(() -&gt; &#123;</span><br><span class="line">        <span class="comment">// 要做什么事情</span></span><br><span class="line">        <span class="comment">// 1、接收数据</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(socket.getInputStream());</span><br><span class="line">            <span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> ois.readObject();</span><br><span class="line">            Collection&lt;Environment&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">            <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Collection&lt;?&gt;) &#123;</span><br><span class="line">                Collection&lt;?&gt; coll = (Collection&lt;?&gt;) obj;</span><br><span class="line">                <span class="keyword">for</span> (Object o : coll) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (o <span class="keyword">instanceof</span> Environment) &#123;</span><br><span class="line">                        <span class="type">Environment</span> <span class="variable">env</span> <span class="operator">=</span> (Environment) o;</span><br><span class="line">                        list.add(env);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 2、入库</span></span><br><span class="line">            <span class="type">DBStore</span> <span class="variable">dbStore</span> <span class="operator">=</span> ConfigurationImpl.getInstance().getDbStore(); <span class="comment">// 通过ConfigurationImpl获取对象</span></span><br><span class="line">            dbStore.saveDB(list);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException | ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="RandomAccessFile"><a href="#RandomAccessFile" class="headerlink" title="RandomAccessFile"></a>RandomAccessFile</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Collection&lt;Environment&gt; <span class="title function_">gather</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">// 定义⼀个⽤来返回结果的集合</span></span><br><span class="line">    Collection&lt;Environment&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    <span class="comment">// 统计⼀下各个数据的条数</span></span><br><span class="line">    <span class="comment">// 温湿度</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">count1</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 光照</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">count2</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// CO2</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">count3</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 使⽤raf可以随意访问⽂件的位置（访问上⼀次⽂件的尾部）</span></span><br><span class="line">    <span class="type">RandomAccessFile</span> <span class="variable">raf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">RandomAccessFile</span>(<span class="string">&quot;client/src/main/resources/&quot;</span> + filePath, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">    log.info(<span class="string">&quot;raf的字节数：&quot;</span> + raf.length());</span><br><span class="line">    <span class="comment">// 1、读取⽂件？⽂件输⼊字符流、缓冲流</span></span><br><span class="line">    <span class="comment">// plus：希望⽂件有更新的时候才采集，没有更新就不采集 -&gt; 备份模块的⽅法</span></span><br><span class="line">    <span class="comment">// 判断备份⽂件是否存在？</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(backupFile);</span><br><span class="line">    <span class="keyword">if</span> (file.exists()) &#123;</span><br><span class="line">        <span class="comment">// 如果备份⽂件存在，和当前⽂件做个对⽐，看是否有更新？ 根据⽂件⼤⼩</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">load</span> <span class="operator">=</span> backup.load(file.getAbsolutePath(), Backup.LOAD_UNREMOVE);</span><br><span class="line">        <span class="comment">// 备份的内容可以是数据，可以是list也可以是⽂本，这⾥推荐每⼀次读取的数据量或者是指针</span></span><br><span class="line">        <span class="type">Long</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0L</span>;</span><br><span class="line">        <span class="keyword">if</span> (load <span class="keyword">instanceof</span> Long) &#123;</span><br><span class="line">            l = (Long) load;</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(<span class="string">&quot;保存的⻓度：&quot;</span> + l);</span><br><span class="line">        <span class="comment">// 如果备份⽂件⼩于采集⽂件，从新添加的位置开始读？RandomAccessFile</span></span><br><span class="line">        log.info(<span class="string">&quot;本次需要读取的⽂件⻓度：&quot;</span> + raf.length());</span><br><span class="line">        <span class="keyword">if</span> (raf.length() &gt; l) &#123;</span><br><span class="line">            <span class="comment">// 有更新，从保存的位置开始读取</span></span><br><span class="line">            raf.seek(l);</span><br><span class="line">            <span class="comment">// 读到⽂件是否要进⾏⼀下换⾏？</span></span><br><span class="line">            <span class="keyword">if</span> (l &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                raf.write(<span class="string">&quot;\r\n&quot;</span>.getBytes());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (raf.length() &lt; l) &#123;</span><br><span class="line">            <span class="comment">// ⽂件出错了</span></span><br><span class="line">            log.warn(<span class="string">&quot;⽂件⻓度出现错误，⽐备份的内容要少&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// ⽂件没有变化</span></span><br><span class="line">            log.warn(<span class="string">&quot;⽂件内容⽆更新&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span> ((line = raf.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="comment">//2、对数据进⾏⼀些操作</span></span><br><span class="line">        <span class="comment">// 数据处理 省略......</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 备份</span></span><br><span class="line">    <span class="comment">// 获取当前最新的指针位置进⾏保存</span></span><br><span class="line">    <span class="type">long</span> <span class="variable">finalPointer</span> <span class="operator">=</span> raf.getFilePointer();</span><br><span class="line">    <span class="comment">// 调⽤备份模块</span></span><br><span class="line">    backup.store(file.getAbsolutePath(), finalPointer, Backup.STORE_OVERRIDE);</span><br><span class="line">    log.info(<span class="string">&quot;⽂件备份成功！&quot;</span>);</span><br><span class="line">    <span class="comment">// 输出</span></span><br><span class="line">    log.info(<span class="string">&quot;本次共采集环境数据【&quot;</span> + list.size() + <span class="string">&quot;】条，其中：&quot;</span>);</span><br><span class="line">    log.info(<span class="string">&quot;温度数据【&quot;</span> + count1 + <span class="string">&quot;】条，&quot;</span>);</span><br><span class="line">    log.info(<span class="string">&quot;湿度数据【&quot;</span> + count1 + <span class="string">&quot;】条，&quot;</span>);</span><br><span class="line">    log.info(<span class="string">&quot;光照强度数据【&quot;</span> + count2 + <span class="string">&quot;】条，&quot;</span>);</span><br><span class="line">    log.info(<span class="string">&quot;CO2浓度数据【&quot;</span> + count3 + <span class="string">&quot;】条。&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5、关闭连接</span></span><br><span class="line">    raf.close();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入和批处理"><a href="#插入和批处理" class="headerlink" title="插入和批处理"></a>插入和批处理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">saveDB</span><span class="params">(Collection&lt;Environment&gt; collection)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">// 获取jdbc连接对象</span></span><br><span class="line">    <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> JDBCUtils.getDruidConnection();</span><br><span class="line">    <span class="comment">// 定义一个语句对象</span></span><br><span class="line">    <span class="type">PreparedStatement</span> <span class="variable">pst</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="comment">// 定义一个前一天的变量</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preDay</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 定义一个统计个数的变量</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 1、集合遍历，取出每一个对象</span></span><br><span class="line">    <span class="keyword">for</span> (Environment environment : collection) &#123;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="comment">// 2、根据时间中的天数，插入到不同的表里</span></span><br><span class="line">        <span class="comment">// Calendar 或者 使用java.time包</span></span><br><span class="line">        <span class="type">Calendar</span> <span class="variable">calendar</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line">        calendar.setTime(environment.getGatherDate());</span><br><span class="line">        <span class="type">int</span> <span class="variable">day</span> <span class="operator">=</span> calendar.get(Calendar.DAY_OF_MONTH);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根据天数来构建插入语句</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;insert into env_detail_&quot;</span> + day + <span class="string">&quot; values(?,?,?,?,?,?,?,?,?)&quot;</span>;</span><br><span class="line">        <span class="comment">// 控制pst的数量，最多只有31个</span></span><br><span class="line">        <span class="keyword">if</span> (pst == <span class="literal">null</span>) &#123;</span><br><span class="line">            pst = conn.prepareStatement(sql);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (preDay != day) &#123;</span><br><span class="line">                pst.executeBatch();</span><br><span class="line">                pst.clearBatch();</span><br><span class="line">                pst = conn.prepareStatement(sql);</span><br><span class="line">                preDay = day;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 加入数据</span></span><br><span class="line">        pst = conn.prepareStatement(sql);</span><br><span class="line">        pst.setString(<span class="number">1</span>, environment.getName());</span><br><span class="line">        pst.setString(<span class="number">2</span>, environment.getSrcId());</span><br><span class="line">        pst.setString(<span class="number">3</span>, environment.getDesId());</span><br><span class="line">        pst.setString(<span class="number">4</span>, environment.getSensorAddress());</span><br><span class="line">        pst.setInt(<span class="number">5</span>, environment.getCount());</span><br><span class="line">        pst.setString(<span class="number">6</span>, environment.getCmd());</span><br><span class="line">        pst.setFloat(<span class="number">7</span>, environment.getData());</span><br><span class="line">        pst.setInt(<span class="number">8</span>, environment.getStatus());</span><br><span class="line">        pst.setTimestamp(<span class="number">9</span>, environment.getGatherDate());</span><br><span class="line">        <span class="comment">// 4、批处理</span></span><br><span class="line">        pst.addBatch();</span><br><span class="line">        <span class="keyword">if</span> (count % batchSize == <span class="number">0</span>) &#123;</span><br><span class="line">            pst.executeBatch();</span><br><span class="line">            pst.clearBatch();</span><br><span class="line">        &#125;</span><br><span class="line">        pst.executeUpdate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (pst != <span class="literal">null</span> &amp;&amp; count % batchSize != <span class="number">0</span>) &#123;</span><br><span class="line">        pst.executeBatch();</span><br><span class="line">        pst.clearBatch();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;入库成功&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：这里有一个超级细节的地方就是时间问题，因为我们处在东八区，所以传感器生成数据的时间是东八区的时间</p>
+<p>如果这个时候我们使用serverTimezone&#x3D;UTC-8 存入数据库的化会出现20号的数据出现在19号的表中</p>
+<p>解决方法：使用 serverTimezone&#x3D;Asia&#x2F;Shanghai</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://127.0.0.1:3306/envir?serverTimezone=Asia/Shanghai&amp;useServerPrepStmts=true</span></span><br></pre></td></tr></table></figure>
+
+<p>当然这里还涉及到如何创建31张不同的日期表的问题哈~~</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> database envir;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">&#x27;envir&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;envir&#x27;</span>;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> envir.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;envir&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"><span class="keyword">set</span> names utf8;</span><br><span class="line">use envir;</span><br><span class="line"><span class="comment">--使用存储过程建表</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span> IF <span class="keyword">EXISTS</span> create_table_do;</span><br><span class="line">delimiter <span class="operator">/</span><span class="operator">/</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> create_table_do()</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="keyword">DECLARE</span> i <span class="type">INT</span> <span class="keyword">DEFAULT</span> <span class="number">1</span>;</span><br><span class="line">	WHILE i <span class="operator">&lt;</span> <span class="number">32</span> DO</span><br><span class="line">		<span class="keyword">SET</span> <span class="variable">@STMT</span> <span class="operator">=</span> CONCAT(&quot;DROP TABLE IF EXISTS `env_detail_&quot;,i,&quot;`;&quot;);</span><br><span class="line">		<span class="keyword">PREPARE</span> STMT <span class="keyword">FROM</span> <span class="variable">@STMT</span>; </span><br><span class="line">		<span class="keyword">EXECUTE</span> STMT;</span><br><span class="line">		<span class="keyword">SET</span> <span class="variable">@STMT</span> <span class="operator">=</span> CONCAT(&quot;CREATE TABLE IF NOT EXISTS `env_detail_&quot;,i,</span><br><span class="line">				&quot;`(`name` varchar(20) NOT NULL COMMENT &#x27;传感器名称&#x27;,</span><br><span class="line">				`srcId` varchar(5) NOT NULL COMMENT &#x27;发送端id&#x27;,</span><br><span class="line">				`dstId` varchar(5) NOT NULL COMMENT &#x27;树莓派系统id&#x27;,</span><br><span class="line">				`sersorAddress` varchar(7) NOT NULL COMMENT &#x27;模块上传感器地址&#x27;,</span><br><span class="line">				`count` int(2) NOT NULL DEFAULT &#x27;1&#x27; COMMENT &#x27;传感器个数&#x27;,</span><br><span class="line">				`cmd`  varchar(5) NOT NULL  DEFAULT &#x27;3&#x27; COMMENT &#x27;指令标号(3表示需要接受数据  16表示需要发送数据)&#x27;,</span><br><span class="line">				`data` float(9,4) NOT NULL COMMENT &#x27;采集的数据&#x27;,</span><br><span class="line">				`status` int(2) NOT NULL DEFAULT &#x27;1&#x27;  COMMENT &#x27;状态标示(默认为1表示成功)&#x27;,</span><br><span class="line">				`gather_date` timestamp NOT NULL COMMENT &#x27;采集时间&#x27;)ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT=&#x27;数据详情日表&#x27;;&quot;</span><br><span class="line">				);</span><br><span class="line">		<span class="keyword">PREPARE</span> STMT <span class="keyword">FROM</span> <span class="variable">@STMT</span>; </span><br><span class="line">		<span class="keyword">EXECUTE</span> STMT;</span><br><span class="line">    	<span class="keyword">SET</span> i <span class="operator">=</span> i <span class="operator">+</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">END</span> WHILE;</span><br><span class="line"><span class="keyword">END</span><span class="operator">/</span><span class="operator">/</span></span><br><span class="line"><span class="keyword">CALL</span> create_table_do();</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地与服务器联调"><a href="#本地与服务器联调" class="headerlink" title="本地与服务器联调"></a>本地与服务器联调</h2><blockquote>
+<p>将server端打成jar包丢到服务器上，通过 java -jar xxxx.jar 启动server端</p>
+<p>启动本地client端，将数据send到server端</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231015152312868.png" alt="image-20231015152312868"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/image-20231015152524181.png" alt="image-20231015152524181"></p>
+<h2 id="收获与喜悦"><a href="#收获与喜悦" class="headerlink" title="收获与喜悦"></a>收获与喜悦</h2><blockquote>
+<p>故余虽愚，卒获有所闻</p>
+</blockquote>
+<p>本项目没有使用到ssm等热门的框架，重在理解执行流程</p>
+<p>项目的难点：</p>
+<ul>
+<li>数据处理，能否正确的理解好数据以及处理好数据真的是至关重要的</li>
+<li>configurationImpl 封装，一个好的封装能够很大程度上简化代码，但是难度颇高</li>
+<li>性能优化：大量的插入数据考虑：批量插入；如果有多个客户端发送数据考虑：线程池</li>
+<li>创建31张不同日期的表：使用mysql中的存储过程实现</li>
+</ul>
+<h1 id="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"><a href="#❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！" class="headerlink" title="❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！"></a>❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</h1><blockquote>
+<p>🍉🍉🍉此博文会持续更新，记得常回来看看哦，一起加油做出更好看更有用的博文呀💪。</p>
+</blockquote>
+<div class="bilibili">
+   <iframe src="//player.bilibili.com/player.html?aid=244692322&bvid=BV1ov411C7YV&cid=238308474&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+</font>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Baylor Luo</div><div class="post-copyright__author_desc">生活明朗，万物可爱</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/')">project-01-物联网环境检测系统</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://3o.hk/images/2024/04/02/0462e1ad876a74ec07f663979a4a5ac4.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://3o.hk/images/2024/04/02/0462e1ad876a74ec07f663979a4a5ac4.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://3o.hk/images/2024/04/02/e9e66e5ced16af6eb936bdb9114fa4cd.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://3o.hk/images/2024/04/02/e9e66e5ced16af6eb936bdb9114fa4cd.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=project-01-物联网环境检测系统&amp;url=http://example.com/2023/10/09/project-01-%E7%89%A9%E8%81%94%E7%BD%91%E7%8E%AF%E5%A2%83%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">恰同学青年</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/project/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>project<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://3o.hk/images/2024/04/04/5b14904e664c45bd80bd716c91f23edd.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/10/05/cpolar%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">cpolar简易实现内网穿透</div></div></a></div><div class="next-post pull-right"><a href="/2023/10/22/project-02-%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">project-02-苍穹外卖</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2023/10/22/project-02-%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/" title="project-02-苍穹外卖"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-10-22</div><div class="title">project-02-苍穹外卖</div></div></a></div><div><a href="/2023/11/21/project-03-%E7%9C%8B%E7%82%B9%E8%B5%84%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="project-03-看点资讯管理系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-11-21</div><div class="title">project-03-看点资讯管理系统</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">青年们要充分认识自己所肩负的重任，祖国再期待你们，人民在期待你们，革命在期待你们</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Baylor Luo</h1><div class="author-info__desc">生活明朗，万物可爱</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Luozongwei" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/404494754" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">数据分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%89%B9%E8%89%B2"><span class="toc-number">3.</span> <span class="toc-text">项目特色</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVN%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6-%E2%80%93-git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6"><span class="toc-number">3.1.</span> <span class="toc-text">SVN版本控制 –&gt; git版本控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96%E6%8E%A7%E5%88%B6"><span class="toc-number">3.2.</span> <span class="toc-text">Maven项目依赖控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8A%9F%E8%83%BD%E5%A4%84%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text">分功能处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9jar%E5%8C%85"><span class="toc-number">3.4.</span> <span class="toc-text">第三方jar包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ConfigurationImpl"><span class="toc-number">3.5.</span> <span class="toc-text">ConfigurationImpl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ThreadPoolExecutor"><span class="toc-number">3.6.</span> <span class="toc-text">ThreadPoolExecutor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RandomAccessFile"><span class="toc-number">3.7.</span> <span class="toc-text">RandomAccessFile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%92%8C%E6%89%B9%E5%A4%84%E7%90%86"><span class="toc-number">3.8.</span> <span class="toc-text">插入和批处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%81%94%E8%B0%83"><span class="toc-number">3.9.</span> <span class="toc-text">本地与服务器联调</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E8%8E%B7%E4%B8%8E%E5%96%9C%E6%82%A6"><span class="toc-number">3.10.</span> <span class="toc-text">收获与喜悦</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%E5%BF%99%E7%A2%8C%E7%9A%84%E6%95%B2%E4%BB%A3%E7%A0%81%E4%B9%9F%E4%B8%8D%E8%A6%81%E5%BF%98%E4%BA%86%E6%B5%AA%E6%BC%AB%E9%B8%AD%EF%BC%81"><span class="toc-number">4.</span> <span class="toc-text">❤️❤️❤️忙碌的敲代码也不要忘了浪漫鸭！</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/04/04/Word%E6%8E%92%E7%89%88%E6%8A%80%E5%B7%A7/" title="Word排版技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://3o.hk/images/2024/04/04/5b14904e664c45bd80bd716c91f23edd.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Word排版技巧"/></a><div class="content"><a class="title" href="/2024/04/04/Word%E6%8E%92%E7%89%88%E6%8A%80%E5%B7%A7/" title="Word排版技巧">Word排版技巧</a><time datetime="2024-04-04T08:48:24.000Z" title="发表于 2024-04-04 16:48:24">2024-04-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/01/hello-world/" title="Hello World">Hello World</a><time datetime="2024-04-01T11:20:20.365Z" title="发表于 2024-04-01 19:20:20">2024-04-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/26/template-02-Java%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" title="template-02-Java开发工具类"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://3o.hk/images/2024/04/03/20210930123720614.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="template-02-Java开发工具类"/></a><div class="content"><a class="title" href="/2023/11/26/template-02-Java%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%B1%BB/" title="template-02-Java开发工具类">template-02-Java开发工具类</a><time datetime="2023-11-26T03:35:14.000Z" title="发表于 2023-11-26 11:35:14">2023-11-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/21/project-03-%E7%9C%8B%E7%82%B9%E8%B5%84%E8%AE%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="project-03-看点资讯管理系统">project-03-看点资讯管理系统</a><time datetime="2023-11-21T01:07:22.000Z" title="发表于 2023-11-21 09:07:22">2023-11-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/10/temp-01-%E4%B8%AA%E4%BA%BA%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%80%BB/" title="temp-01-个人项目汇总">temp-01-个人项目汇总</a><time datetime="2023-11-10T09:06:16.000Z" title="发表于 2023-11-10 17:06:16">2023-11-10</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="workboard"><img class="workSituationImg boardsign" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg" alt="距离月入25k也就还差一个大佬带我~" title="距离月入25k也就还差一个大佬带我~"/><div id="runtimeTextTip"></div></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title="博客框架为Hexo_v5.4.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg" alt="博客框架为Hexo_v5.4.0"/></a><a class="github-badge" target="_blank" href="https://blog.anheyu.com/" style="margin-inline:5px" data-title="本站使用AnZhiYu主题" title="本站使用AnZhiYu主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.9/img/Theme-AnZhiYu-2E67D3.svg" alt="本站使用AnZhiYu主题"/></a><a class="github-badge" target="_blank" href="https://www.dogecloud.com/" style="margin-inline:5px" data-title="本站使用多吉云为静态资源提供CDN加速" title="本站使用多吉云为静态资源提供CDN加速"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/CDN-多吉云-3693F3.svg" alt="本站使用多吉云为静态资源提供CDN加速"/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title="本站项目由Github托管"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Source-Github.svg" alt="本站项目由Github托管"/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg" alt="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"/></a></p></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2024 By <a class="footer-bar-link" href="/" title="Baylor Luo" target="_blank">Baylor Luo</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">32</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imsyy.lzwgxust.top/" title="个人首页"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/13/64d8c2748ef34.jpg" alt="个人首页"/><span class="back-menu-item-text">个人首页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.lzwgxust.top/" title="楚门的世界"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="楚门的世界"/><span class="back-menu-item-text">楚门的世界</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/link/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> 友人帐</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/fcircle/"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><i class="anzhiyufont anzhiyu-icon-envelope faa-tada" style="font-size: 0.9em;"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/bangumis/"><i class="anzhiyufont anzhiyu-icon-bilibili faa-tada" style="font-size: 0.9em;"></i><span> 追番页</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/air-conditioner/"><i class="anzhiyufont anzhiyu-icon-fan faa-tada" style="font-size: 0.9em;"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/equipment/"><i class="anzhiyufont anzhiyu-icon-dice-d20 faa-tada" style="font-size: 0.9em;"></i><span> 我的装备</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/BitWarden/" style="font-size: 0.88rem;">BitWarden<sup>1</sup></a><a href="/tags/SpringMVC/" style="font-size: 0.88rem;">SpringMVC<sup>1</sup></a><a href="/tags/Word/" style="font-size: 0.88rem;">Word<sup>1</sup></a><a href="/tags/algorithm/" style="font-size: 0.88rem;">algorithm<sup>2</sup></a><a href="/tags/chatgpt/" style="font-size: 0.88rem;">chatgpt<sup>1</sup></a><a href="/tags/ecplise/" style="font-size: 0.88rem;">ecplise<sup>1</sup></a><a href="/tags/git/" style="font-size: 0.88rem;">git<sup>1</sup></a><a href="/tags/github/" style="font-size: 0.88rem;">github<sup>3</sup></a><a href="/tags/go/" style="font-size: 0.88rem;">go<sup>3</sup></a><a href="/tags/goland/" style="font-size: 0.88rem;">goland<sup>1</sup></a><a href="/tags/gulimail/" style="font-size: 0.88rem;">gulimail<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>2</sup></a><a href="/tags/idea/" style="font-size: 0.88rem;">idea<sup>2</sup></a><a href="/tags/interview/" style="font-size: 0.88rem;">interview<sup>2</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>23</sup></a><a href="/tags/jdk/" style="font-size: 0.88rem;">jdk<sup>1</sup></a><a href="/tags/jdk8/" style="font-size: 0.88rem;">jdk8<sup>1</sup></a><a href="/tags/linux/" style="font-size: 0.88rem;">linux<sup>3</sup></a><a href="/tags/markdown/" style="font-size: 0.88rem;">markdown<sup>1</sup></a><a href="/tags/mysql/" style="font-size: 0.88rem;">mysql<sup>5</sup></a><a href="/tags/navicat/" style="font-size: 0.88rem;">navicat<sup>1</sup></a><a href="/tags/ppt/" style="font-size: 0.88rem;">ppt<sup>1</sup></a><a href="/tags/project/" style="font-size: 0.88rem;">project<sup>3</sup></a><a href="/tags/spotify/" style="font-size: 0.88rem;">spotify<sup>1</sup></a><a href="/tags/springboot/" style="font-size: 0.88rem;">springboot<sup>1</sup></a><a href="/tags/svn/" style="font-size: 0.88rem;">svn<sup>1</sup></a><a href="/tags/temp/" style="font-size: 0.88rem;">temp<sup>1</sup></a><a href="/tags/template/" style="font-size: 0.88rem;">template<sup>2</sup></a><a href="/tags/utools/" style="font-size: 0.88rem;">utools<sup>2</sup></a><a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 0.88rem;">内网穿透<sup>1</sup></a><a href="/tags/%E6%B2%B9%E7%8C%B4/" style="font-size: 0.88rem;">油猴<sup>1</sup></a><a href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/" style="font-size: 0.88rem;">百度网盘<sup>1</sup></a></div></div><hr/></div></div><div id="keyboard-tips"><div class="keyboardTitle">博客快捷键</div><div class="keybordList"><div class="keybordItem"><div class="keyGroup"><div class="key">shift K</div></div><div class="keyContent"><div class="content">关闭快捷键功能</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift A</div></div><div class="keyContent"><div class="content">打开/关闭中控台</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift M</div></div><div class="keyContent"><div class="content">播放/暂停音乐</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift D</div></div><div class="keyContent"><div class="content">深色/浅色显示模式</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift S</div></div><div class="keyContent"><div class="content">站内搜索</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift R</div></div><div class="keyContent"><div class="content">随机访问</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift H</div></div><div class="keyContent"><div class="content">返回首页</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift F</div></div><div class="keyContent"><div class="content">友链鱼塘</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift L</div></div><div class="keyContent"><div class="content">友链页面</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift P</div></div><div class="keyContent"><div class="content">关于本站</div></div></div><div class="keybordItem"><div class="keyGroup"><div class="key">shift I</div></div><div class="keyContent"><div class="content">原版/本站右键菜单</div></div></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.cbd.int/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2024 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2024 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Baylor Luo 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("04/01/2024 00:00:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      if (img != null) {
+        img.src = "https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg";
+        img.title = "下班了就该开开心心的玩耍，嘿嘿~";
+        img.alt = "下班了就该开开心心的玩耍，嘿嘿~";
+      }
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.lzwgxust.top/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.lzwgxust.top/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.lzwgxust.top/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.cbd.int/twikoo@1.6.25/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "lzwgxust@163.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/anzhiyu/right_click_menu.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
